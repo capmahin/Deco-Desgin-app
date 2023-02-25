@@ -65,6 +65,8 @@ try {
             message:'Invalid email or password'
         })
     }
+    //check user
+    const user = await userModel.findOne({email})
     const match = await comparePassword(password,user.password)
 } catch (error) {
     console.log(error)
