@@ -1,13 +1,12 @@
-const express = require('express')
+const express = require('express');
+const colors = require('colors');
 
 //rest object
 const app = express()
 
 //rest api
 app.get('/',(req,res)=>{
-    res.send({
-        message:'welcome to Deco-Design'
-    })
+    res.send("<h1>Welcome to Deco-Design</h1>");
 })
 
 //PORT
@@ -15,5 +14,5 @@ const PORT = 8080
 
 //run listen
 app.listen(PORT, ()=>{
-    console.log(`Server Running on ${PORT}`);
+    console.log(`Server Running on ${PORT}`.bgCyan.white);
 })
