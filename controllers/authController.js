@@ -20,6 +20,15 @@ export const registerController = async (req, res) =>{
         if(!address){
             return res.send({error:'Address is Required'})
         }
+        //check user
+        const exisitingUser = await userModel.findOne({email})
+        //existing user
+        if(exisitingUser){
+            return res.status(200).send({
+                success:true,
+                message:'Already Register please login',
+            })
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send({
