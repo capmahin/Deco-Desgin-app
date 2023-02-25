@@ -74,6 +74,12 @@ try {
         })
     }
     const match = await comparePassword(password,user.password)
+    if(!match){
+        return res.status(200).send({
+            success:false,
+            message:'Invalid Password'
+        })
+    }
 } catch (error) {
     console.log(error)
     res.status(500).send({
