@@ -55,6 +55,16 @@ export const registerController = async (req, res) =>{
 };
 
 //POST LOGIN
-export const loginController = ()=>{
+export const loginController = async ( req, res)=>{
+try {
+    const {email, password} = req.body
+} catch (error) {
+    console.log(error)
+    res.status(500).send({
+        success:false,
+        message:'Error in login',
+        error
+    })
     
+}
 }
