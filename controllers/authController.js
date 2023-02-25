@@ -80,6 +80,8 @@ try {
             message:'Invalid Password'
         })
     }
+    //token
+    const token  = await JWT.sign({_id:user._id})
 } catch (error) {
     console.log(error)
     res.status(500).send({
