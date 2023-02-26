@@ -21,9 +21,9 @@ export const isAdmin = async (req,res,next)=>{
                 message:'UnAuthorized Access'
             })
         }else{
-            
+            next();
         }
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
