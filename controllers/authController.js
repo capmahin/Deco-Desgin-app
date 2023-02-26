@@ -106,5 +106,5 @@ try {
 
 //test controller
 export const testController = (req,res)=>{
-    console.log('protected Route')
+   res.send("Protected Routes")
 }
