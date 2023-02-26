@@ -3,7 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className="bg-dark text-light p-3">
-        <h1>footer comp</h1>
+        <h4 className="text-center">
+            All Right Reserved &copy; Deco-Design
+        </h4>
     </div>
   )
 }
