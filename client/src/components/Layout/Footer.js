@@ -13,7 +13,7 @@ const Footer = () => {
         <Link to="/contact">Contact</Link>
         |
         <Link to="/policy">Privacy Policy</Link>
-        |
+        
      </p>
     </div>
   )
