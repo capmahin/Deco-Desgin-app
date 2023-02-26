@@ -1,8 +1,17 @@
 import React from 'react'
+import Header from "./Header"
+import Footer from './Footer';
 
-const Layout = () => {
+const Layout = ({children}) => {
   return (
-    <div><h1>Layout</h1></div>
+    <div>
+        <Header/>
+        <main>
+        {children}
+        </main>
+    
+    <Footer/>
+    </div>
   )
 }
 
