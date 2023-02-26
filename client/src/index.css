@@ -10,3 +10,11 @@
 font-family: 'PT Sans', sans-serif;
 font-family: 'Playfair Display', serif;
  */
+
+ /* //navbar css */
+ .navbar{
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+ }
