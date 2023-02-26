@@ -99,7 +99,12 @@ try {
         success:false,
         message:'Error in login',
         error
-    })
+    });
     
 }
+};
+
+//test controller
+export const testController = (req,res)=>{
+    console.log('protected Route')
 }
