@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from './../../components/Layout/Layout';
+import axios from 'axios';
 import { useState } from 'react';
 import {toast} from 'react-toastify'
 
@@ -12,10 +13,18 @@ const Register = () => {
 
   //form function
 
-  const handleSubmit =(e)=>{
-    e.preventDefault()
-    console.log(name,email,password,phone,address)
-    toast.success("Register Successfully")
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    try {
+       const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`,{name,email,password,phone,address});
+       if(res.data.success){
+        toast.success(res.data.message)
+       }
+    } catch (error) {
+      console.log(error)
+      toast.error('Something went wrong')
+    }
+    
   }
   return (
     <Layout title={"Register - Deco Design"}>
