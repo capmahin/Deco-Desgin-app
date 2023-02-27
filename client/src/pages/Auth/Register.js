@@ -8,11 +8,17 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState("")
   const [address, setAddress] = useState("")
+
+  //form function
+
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+  }
   return (
     <Layout title={"Register - Deco Design"}>
       <div className="register">
         <h1>Register Page</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
   <div className="mb-3">
     
     <input type="text" 
