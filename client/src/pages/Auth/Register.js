@@ -15,26 +15,35 @@ const Register = () => {
         <form>
   <div className="mb-3">
     
-    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter Your Name" />
+    <input type="text" 
+    value={name}
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Name" />
    
   </div>
   <div className="mb-3">
     
-    <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter Your Email"   />
+    <input type="email"
+    value={email}
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Email"   />
    
   </div>
   <div className="mb-3">
    
-    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter Your password"  />
+    <input type="password"
+    value={password} className="form-control" id="exampleInputPassword1" placeholder="Enter Your password"  />
   </div>
   <div className="mb-3">
     
-    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter Your Phone Number"  />
+    <input type="text" 
+    value={phone}
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Phone Number"  />
    
   </div>
   <div className="mb-3">
 
-    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter Your Address"  />
+    <input type="text" 
+    value={address}
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Address"  />
    
   </div>
   
