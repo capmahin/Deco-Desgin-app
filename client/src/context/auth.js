@@ -10,8 +10,13 @@ const AuthProvider = ({children}) =>{
         token:""
     })
     return(
-        <AuthContext.Provider>
+        <AuthContext.Provider value={[auth,setAuth]}>
             {children}
         </AuthContext.Provider>
     )
 }
+
+//custom hook
+const useAuth = () => useContext(AuthContext)
+
+export {useAuth, AuthProvider}
