@@ -4,6 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import "../../styles/AuthStyle.css"
 
 const Register = () => {
   const [name, setName] = useState("")
@@ -33,8 +34,8 @@ const Register = () => {
   }
   return (
     <Layout title={"Register - Deco Design"}>
-      <div className="register">
-        <h1>Register Page</h1>
+      <div className="form-container">
+        <h4 className="title">REGISTER FORM</h4>
         <form onSubmit={handleSubmit}>
   <div className="mb-3">
     
