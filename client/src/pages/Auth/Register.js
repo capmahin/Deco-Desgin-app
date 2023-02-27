@@ -1,7 +1,13 @@
 import React from 'react'
 import Layout from './../../components/Layout/Layout';
+import { useState } from 'react';
 
 const Register = () => {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [phone, setPhone] = useState("")
+  const [address, setAddress] = useState("")
   return (
     <Layout title={"Register - Deco Design"}>
       <div className="register">
