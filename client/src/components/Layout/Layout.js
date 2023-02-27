@@ -24,7 +24,14 @@ const Layout = ({children,title,description,keywords,author}) => {
     
     <Footer/>
     </div>
-  )
+  );
+};
+
+Layout.defaultProps = {
+  title:"Deco-Design - shop now",
+  description:"mern stack project",
+  keywords:"mern,react,node,mongodb",
+  author:"Deco-Design",
 }
 
 export default Layout
