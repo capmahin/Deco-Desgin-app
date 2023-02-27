@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from './../../components/Layout/Layout';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
-import {toast} from 'react-toastify'
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const [name, setName] = useState("")
@@ -10,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState("")
   const [address, setAddress] = useState("")
+  const navigate = useNavigate()
 
   //form function
 
@@ -17,8 +19,11 @@ const Register = () => {
     e.preventDefault();
     try {
        const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`,{name,email,password,phone,address});
-       if(res.data.success){
+       if( res && res.data.success){
         toast.success(res.data.message)
+        navigate('/login')
+       }else{
+        toast.error(res.data.message)
        }
     } catch (error) {
       console.log(error)
