@@ -3,6 +3,7 @@ import { NavLink,Link } from "react-router-dom"
 import {FiShoppingBag} from 'react-icons/fi';
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
+import Dashboard from './../../pages/user/Dashboard';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -38,6 +39,16 @@ const Header = () => {
           <NavLink to="/login" className="nav-link" >Login</NavLink>
         </li>
           </>) : (<>
+            <li className="nav-item dropdown">
+  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+  <ul className="dropdown-menu">
+    <li><NavLink to="/dashboard" className="dropdown-item" >Dashboard</NavLink></li>
+    
+  </ul>
+</li>
+
             <li className="nav-item">
           <NavLink onClick={handleLogout} to="/login" className="nav-link" >Logout</NavLink>
         </li>
