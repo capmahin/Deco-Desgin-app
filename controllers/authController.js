@@ -106,8 +106,17 @@ try {
 
 //forgotPasswordController
 
-export const forgotPasswordController = () =>{
+export const forgotPasswordController = async (req,res) =>{
+   try {
     
+   } catch (error) {
+    console.log(error)
+    res.status(500).send({
+        success:false,
+        message:'Something went wrong',
+        error
+    })
+   }
 }
 
 //test controller
