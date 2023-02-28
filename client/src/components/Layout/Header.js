@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink,Link } from "react-router-dom"
-import {FiShoppingBag} from 'react-icons/fi'
+import {FiShoppingBag} from 'react-icons/fi';
+import { useAuth } from "../../context/auth";
 
 const Header = () => {
+  const [auth, setAuth] = useAuth()
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
