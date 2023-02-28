@@ -46,7 +46,7 @@ const Header = () => {
   <ul className="dropdown-menu">
     <li><NavLink to="/dashboard" className="dropdown-item" >Dashboard</NavLink></li>
    <li>
-   <NavLink onClick={handleLogout} to="/login" className="nav-link" >Logout</NavLink>
+   <NavLink onClick={handleLogout} to="/login" className="dropdown-item"  >Logout</NavLink>
    </li>
   </ul>
 </li>
