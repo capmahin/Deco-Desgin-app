@@ -16,7 +16,9 @@ export default function PrivateRoute(){
                 }
             })
             if(res.data.ok){
-                
+                setOk(true)
+            }else{
+                setOk(false)
             }
          }
     },[])
