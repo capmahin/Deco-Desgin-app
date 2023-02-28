@@ -8,7 +8,8 @@ const Spinner = () => {
     useEffect(()=>{
         const interval = setInterval(()=>{
             setCount((prevValue)=> --prevValue)
-        },1000)
+        },1000);
+        count === 0 && navigate('/login')
     },[])
   return (
     <>
