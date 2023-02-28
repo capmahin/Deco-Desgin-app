@@ -9,7 +9,8 @@ import { useAuth } from "../../context/auth";
 
 const ForgotPasssword = () => {
     const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [newPassword, setNewPassword] = useState("")
+  const [answer, setAnswer] = useState("")
   const [auth, setAuth] = useAuth()
  
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const ForgotPasssword = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     try {
-       const res = await axios.post("/api/v1/auth/login",{email,password});
+       const res = await axios.post("/api/v1/auth/forgot-password",{email,newPassword,answer});
        if( res && res.data.success){
         toast.success(res.data.message)
         setAuth({
@@ -38,7 +39,7 @@ const ForgotPasssword = () => {
     
   }
   return (
-    <Layout title={'Forgot-Passowrd'}> 
+    <Layout title={'Forgot-Password'}> 
     <div className="form-container">
     <h4 className="title">RESET PASSWORD</h4>
     <form onSubmit={handleSubmit}>
@@ -53,18 +54,24 @@ className="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" 
 </div>
 <div className="mb-3">
 
+<input type="text"
+value={answer}
+onChange={(e)=>setAnswer(e.target.value)}
+className="form-control" id="exampleInputEmail1" placeholder="Enter Your Bast Friend Name"  required />
+
+</div>
+<div className="mb-3">
+
 <input type="password"
-value={password} 
-onChange={(e)=>setPassword(e.target.value)}
+value={newPassword} 
+onChange={(e)=>setNewPassword(e.target.value)}
 className="form-control" id="exampleInputPassword1" placeholder="Enter Your password" required />
 </div>
 
 
 
-<div className="mb-3">
-<button type="button" className="btn btn-primary" onClick={()=>{navigate('/forgot-password')}}>Forgot Password</button>
-</div>
-<button type="submit" className="btn btn-primary">LOGIN</button>
+
+<button type="submit" className="btn btn-primary">RESET</button>
 </form>
 
   </div></Layout>
