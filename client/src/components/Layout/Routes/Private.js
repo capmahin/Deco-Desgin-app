@@ -21,7 +21,8 @@ export default function PrivateRoute(){
                 setOk(false)
             }
          }
-    },[])
+         if(auth?.token)authCheck()
+    },[auth?.token])
 
     return ok ?<Outlet/> : 'spinner'
 }
