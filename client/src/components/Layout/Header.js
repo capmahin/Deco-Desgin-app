@@ -4,7 +4,13 @@ import {FiShoppingBag} from 'react-icons/fi';
 import { useAuth } from "../../context/auth";
 
 const Header = () => {
-  const [auth, setAuth] = useAuth()
+  const [auth, setAuth] = useAuth();
+  const handleLogout = () =>{
+    setAuth({
+      ...auth, user:null,token:''
+    })
+    localStorage.removeItem('auth');
+  }
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -31,7 +37,7 @@ const Header = () => {
         </li>
           </>) : (<>
             <li className="nav-item">
-          <NavLink to="/login" className="nav-link" >Logout</NavLink>
+          <NavLink onClick={handleLogout} to="/login" className="nav-link" >Logout</NavLink>
         </li>
           </>)
         }
