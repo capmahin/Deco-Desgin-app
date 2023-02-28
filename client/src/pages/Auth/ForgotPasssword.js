@@ -1,20 +1,20 @@
 import React from 'react'
 import Layout from './../../components/Layout/Layout';
 import axios from 'axios';
-import {useNavigate,useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import "../../styles/AuthStyle.css";
-import { useAuth } from "../../context/auth";
+
 
 const ForgotPasssword = () => {
     const [email, setEmail] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [answer, setAnswer] = useState("")
-  const [auth, setAuth] = useAuth()
+ 
  
   const navigate = useNavigate();
-  const location = useLocation();
+  
 
   const handleSubmit = async(e)=>{
     e.preventDefault();
@@ -22,13 +22,9 @@ const ForgotPasssword = () => {
        const res = await axios.post("/api/v1/auth/forgot-password",{email,newPassword,answer});
        if( res && res.data.success){
         toast.success(res.data.message)
-        setAuth({
-            ...auth,
-            user:res.data.user,
-            token:res.data.token,
-        });
-        localStorage.setItem('auth',JSON.stringify(res.data))
-        navigate(location.state || '/');
+        
+       
+        navigate('/login');
        }else{
         toast.error(res.data.message)
        }
