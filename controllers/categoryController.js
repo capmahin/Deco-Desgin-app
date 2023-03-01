@@ -1,6 +1,9 @@
 export const createCategoryController = async (req,res) =>{
     try {
         const {name} = req.body
+        if(!name){
+            return res.status(401).send({message:'Name is required'})
+        }
         
     } catch (error) {
         console.log(error)
