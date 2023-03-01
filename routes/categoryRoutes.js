@@ -4,6 +4,6 @@ import { isAdmin, requireSignIn } from './../middlewares/authMiddleware.js';
 const router = express.Router()
 
 //routers
-router.post('create-category', requireSignIn, isAdmin)
+router.post('create-category', requireSignIn, isAdmin, createCategoryController)
 
 export default router
