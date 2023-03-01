@@ -5,6 +5,10 @@ import { createCategoryController } from './../controllers/categoryController.js
 const router = express.Router()
 
 //routers
-router.post('/create-category', requireSignIn, isAdmin, createCategoryController)
+//create category
+router.post('/create-category', requireSignIn, isAdmin, createCategoryController);
+
+//update category
+router.put('/update-category', requireSignIn,isAdmin, updateCategoryController)
 
 export default router
