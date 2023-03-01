@@ -15,7 +15,7 @@ export const createCategoryController = async (req,res) =>{
                 message:'Category Already Exisits'
             })
         }
-        const category = await new categoryModel({name, slug:slugify(name)})
+        const category = await new categoryModel({name, slug:slugify(name)}).save()
         
     } catch (error) {
         console.log(error)
