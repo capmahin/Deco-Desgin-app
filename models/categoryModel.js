@@ -11,3 +11,5 @@ const categorySchema = new mongoose.Schema({
         lowercase:true
     }
 })
+
+export default mongoose.model('Category',categorySchema)
