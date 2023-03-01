@@ -39,7 +39,9 @@ export const updateCategoryController =async (req,res) =>{
     try {
         const {name} = req.body
         const {id} = req.params
-        const category = await categoryModel.findByIdAndUpdate()
+        const category = await categoryModel.findByIdAndUpdate(id,{
+            name, slug:slugify(name)
+        },{new:true})
     } catch (error) {
         console.log(error)
         res.status(500).send({
