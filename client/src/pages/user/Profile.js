@@ -4,7 +4,7 @@ import Layout from './../../components/Layout/Layout';
 
 const Profile = () => {
   return (
-    <Layout>
+    <Layout title={'Dashboard-User Profile'}>
         <div className="container-fluid m-3 p-3">
             <div className="row">
                 <div className="col-md-3">
