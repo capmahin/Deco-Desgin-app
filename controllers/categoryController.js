@@ -58,6 +58,15 @@ export const updateCategoryController =async (req,res) =>{
 };
 
 //get all category
-export const categoryController = () =>{
+export const categoryController = async (req,res) =>{
+try {
     
+} catch (error) {
+    console.log(error)
+    res.status(500).send({
+        success:false,
+        error,
+        message:'Error while getting all categories'
+    })
 }
+};
