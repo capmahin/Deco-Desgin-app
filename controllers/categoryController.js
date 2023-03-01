@@ -55,4 +55,9 @@ export const updateCategoryController =async (req,res) =>{
             message:'Error while updating category'
         })
     }
+};
+
+//get all category
+export const categoryController = () =>{
+    
 }
