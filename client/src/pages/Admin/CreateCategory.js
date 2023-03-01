@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout"
 
 const CreateCategory = () => {
   return (
-    <Layout>
+    <Layout title={'Dashboard-Category'}>
         <div className="container-fluid m-3 p-3">
         <div className="row">
     <div className="col-md-3">
