@@ -4,13 +4,16 @@ import { NavLink } from "react-router-dom"
 const AdminMenu = () => {
   return (
     <>
-   <ul className="list-group">
-  <li className="list-group-item active" aria-current="true">An active item</li>
-  <li className="list-group-item">A second item</li>
-  <li className="list-group-item">A third item</li>
-  <li className="list-group-item">A fourth item</li>
-  <li className="list-group-item">And a fifth one</li>
-</ul>
+  <div className="list-group">
+  <NavLink to="#" className="list-group-item list-group-item-action active" aria-current="true">
+    The current link item
+  </NavLink>
+  <NavLink to="#" className="list-group-item list-group-item-action">A second link item</NavLink>
+  <NavLink to="#" className="list-group-item list-group-item-action">A third link item</NavLink>
+  <NavLink to="#" className="list-group-item list-group-item-action">A fourth link item</NavLink>
+  <NavLink className="list-group-item list-group-item-action disabled">A disabled link item</NavLink>
+</div>
+
 
     </>
   )
