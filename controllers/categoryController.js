@@ -75,3 +75,9 @@ try {
     })
 }
 };
+
+//single category
+
+export const singleCategoryController = () =>{
+    
+}
