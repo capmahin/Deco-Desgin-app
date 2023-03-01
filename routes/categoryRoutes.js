@@ -9,6 +9,9 @@ const router = express.Router()
 router.post('/create-category', requireSignIn, isAdmin, createCategoryController);
 
 //update category
-router.put('/update-category/:id', requireSignIn,isAdmin, updateCategoryController)
+router.put('/update-category/:id', requireSignIn,isAdmin, updateCategoryController);
+
+//getAll category
+router.get('/category', categoryController)
 
 export default router
