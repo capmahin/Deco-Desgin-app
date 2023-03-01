@@ -102,5 +102,15 @@ export const singleCategoryController = async (req,res) =>{
 //delete category
 
 export const deleteCategoryController = async (req,res)=>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'error while deleting category',
+            error
+        })
+        
+    }
 }
