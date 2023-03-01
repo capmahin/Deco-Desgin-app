@@ -78,6 +78,6 @@ try {
 
 //single category
 
-export const singleCategoryController = () =>{
-    
-}
+export const singleCategoryController = async (req,res) =>{
+
+};
