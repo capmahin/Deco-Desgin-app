@@ -27,6 +27,7 @@ export const createProductController = async (req,res)=>{
             products.photo.data = fs.readFileSync(photo.path)
             products.contentType = photo.type
         }
+        await products.save()
     } catch (error) {
         console.log(error)
         res.status(500).send({
