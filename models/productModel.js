@@ -36,6 +36,6 @@ const productSchema = new mongoose.Schema({
         type:Boolean
     }
 
-},{timestamps:true})
+},{timestamps:true});
 
 export default mongoose.model('Products',productSchema)
