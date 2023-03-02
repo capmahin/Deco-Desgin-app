@@ -123,4 +123,13 @@ export const deleteProductController = async (req,res)=>{
             error,
         })
     }
+};
+
+//update product
+export const updateProductController = async (req,res)=>{
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
