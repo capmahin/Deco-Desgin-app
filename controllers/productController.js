@@ -1,6 +1,6 @@
 import productModel from "../models/productModel.js"
 import fs from 'fs'
-import { slugify } from 'slugify';
+import  slugify  from 'slugify';
 
 export const createProductController = async (req,res)=>{
     try {
@@ -23,6 +23,10 @@ export const createProductController = async (req,res)=>{
                 return res.status(500).send({error:'Photo is Required and should be less then 1mb'})
         }
         const products = new productModel({...req.fields, slug:slugify(name)})
+        if(photo){
+            products.photo.data = fs.readFileSync(photo.path)
+            products.contentType = photo.type
+        }
     } catch (error) {
         console.log(error)
         res.status(500).send({
