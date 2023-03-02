@@ -64,4 +64,15 @@ export const getProductController = async (req,res)=>{
         })
         
     }
+};
+
+//get single product
+
+export const getSingleProductController = async (req,res)=>{
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
 }
