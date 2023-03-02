@@ -71,6 +71,11 @@ export const getProductController = async (req,res)=>{
 export const getSingleProductController = async (req,res)=>{
     try {
         const product = await productModel.findOne({slug:req.params.slug})
+        res.status(200).send({
+            success:true,
+            message:'Single Product Fetched',
+            product,
+        })
     } catch (error) {
         console.log(error)
         res.status(500).send({
