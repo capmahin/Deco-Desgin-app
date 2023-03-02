@@ -17,7 +17,25 @@ const productSchema = new mongoose.Schema({
     price:{
         type:Number,
         required:true
+    },
+    category:{
+        type:mongoose.ObjectId,
+        ref:'Category',
+        required:true
+    },
+    quantity:{
+        type:Number,
+        required:true
+    },
+    photo:{
+        type:Buffer,
+        contentType:String,
+
+    },
+    shipping:{
+        type:Boolean
     }
+
 })
 
 export default mongoose.model('Products',productSchema)
