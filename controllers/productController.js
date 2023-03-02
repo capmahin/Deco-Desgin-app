@@ -41,4 +41,10 @@ export const createProductController = async (req,res)=>{
             error,
         })
     }
+};
+
+//get all product
+
+export const getProductController = async (req,res)=>{
+    
 }
