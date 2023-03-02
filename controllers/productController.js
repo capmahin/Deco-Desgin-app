@@ -104,4 +104,10 @@ export const productPhotoController = async(req,res)=>{
             error,
         })
     }
+};
+
+//deleteProductController
+
+export const deleteProductController = async (req,res)=>{
+    
 }
