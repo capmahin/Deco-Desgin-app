@@ -85,4 +85,10 @@ export const getSingleProductController = async (req,res)=>{
         })
         
     }
+};
+
+//get photo
+
+export const productPhotoController = async(req,res)=>{
+    
 }
