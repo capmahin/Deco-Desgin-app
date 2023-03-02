@@ -52,6 +52,7 @@ export const getProductController = async (req,res)=>{
             success:true,
             message:'All Products',
             products,
+            total:products.length
         })
     } catch (error) {
         console.log(error)
