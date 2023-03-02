@@ -10,4 +10,8 @@ router.post('/create-product', requireSignIn, isAdmin, formidable(), createProdu
 
 //get products
 router.get('/get-product', getProductController);
+
+//single product
+router.get('/get-product/:slug', getSingleProductController);
+
 export default router;
