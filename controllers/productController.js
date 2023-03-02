@@ -70,7 +70,7 @@ export const getProductController = async (req,res)=>{
 
 export const getSingleProductController = async (req,res)=>{
     try {
-        
+        const product = await productModel.findOne({slug:req.params.slug})
     } catch (error) {
         console.log(error)
         res.status(500).send({
