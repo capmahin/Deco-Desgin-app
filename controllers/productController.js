@@ -50,9 +50,10 @@ export const getProductController = async (req,res)=>{
         const products = await productModel.find({}).select("-photo").limit(12).sort({createdAt:-1})
         res.status(200).send({
             success:true,
+            countTotal:products.length,
             message:'All Products',
             products,
-            total:products.length
+            
         })
     } catch (error) {
         console.log(error)
