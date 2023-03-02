@@ -1,5 +1,6 @@
 import productModel from "../models/productModel.js"
 import fs from 'fs'
+import { slugify } from 'slugify';
 
 export const createProductController = async (req,res)=>{
     try {
@@ -9,8 +10,7 @@ export const createProductController = async (req,res)=>{
         switch(true){
             case !name:
                 return res.status(500).send({error:'Name is Required'})
-            case !slug:
-                return res.status(500).send({error:'Slug is Required'})
+            
             case !description:
                 return res.status(500).send({error:'Description is Required'})
             case !price:
@@ -19,10 +19,10 @@ export const createProductController = async (req,res)=>{
                 return res.status(500).send({error:'Category is Required'})
             case !quantity:
                 return res.status(500).send({error:'Quantity is Required'})
-            case !shipping:
-                return res.status(500).send({error:'Shipping is Required'})
+            case !photo && photo.size > 1000000:
+                return res.status(500).send({error:'Photo is Required and should be less then 1mb'})
         }
-        const products = await productModel
+        const products = new productModel({...req.fields, slug:slugify(name)})
     } catch (error) {
         console.log(error)
         res.status(500).send({
