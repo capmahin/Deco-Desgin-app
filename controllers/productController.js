@@ -90,5 +90,14 @@ export const getSingleProductController = async (req,res)=>{
 //get photo
 
 export const productPhotoController = async(req,res)=>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Error while getting photo',
+            error,
+        })
+    }
 }
