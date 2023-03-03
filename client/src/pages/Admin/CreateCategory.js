@@ -12,7 +12,7 @@ const CreateCategory = () => {
     try {
       const {data} = await axios.get('/api/v1/category/get-category')
       if(data.success){
-        setCategories(data)
+        setCategories(data.category)
       }
     } catch (error) {
       console.log(error)
@@ -42,12 +42,18 @@ const CreateCategory = () => {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    
+     {
+      categories.map(c => (
+        <>
+        <tr>
+        <td key={c._id}>{c.name}</td>
+        <td><button className="btn btn-primary">Edit</button></td>
     </tr>
+        </>
+      ))
+     }
+    
     
   </tbody>
 </table>
