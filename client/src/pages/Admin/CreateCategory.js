@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import AdminMenu from "../../components/Layout/AdminMenu"
 import Layout from "../../components/Layout/Layout"
 
 const CreateCategory = () => {
+  const [categories,setCategories] = useState([])
   return (
     <Layout title={'Dashboard-Create-Category'}>
         <div className="container-fluid m-3 p-3">
