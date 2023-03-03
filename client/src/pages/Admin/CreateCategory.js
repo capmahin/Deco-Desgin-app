@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from 'react'
 import AdminMenu from "../../components/Layout/AdminMenu"
 import Layout from "../../components/Layout/Layout"
+import toast from 'react-hot-toast';
+import axios from "axios";
 
 const CreateCategory = () => {
   const [categories,setCategories] = useState([])
@@ -8,9 +10,13 @@ const CreateCategory = () => {
   //get all cat
   const getAllCategory = async () =>{
     try {
-      
+      const {data} = await axios.get('/api/v1/category/get-category')
+      if(data.success){
+        setCategories(data)
+      }
     } catch (error) {
       console.log(error)
+      toast.error('Something went wrong in getting category')
     }
   }
   return (
