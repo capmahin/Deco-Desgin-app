@@ -36,6 +36,19 @@ const CreateProduct = () => {
   //create product function
   const handleCreate = async(e) =>{
     e.preventDefault()
+    try {
+      const productData = new FormData()
+      productData.append("name",name)
+      productData.append("description",description)
+      productData.append("price",price)
+      productData.append("quantity",quantity)
+      productData.append("photo",photo)
+      productData.append("category",category)
+      const {data} = axios.post('/api/v1/product/create-product',)
+    } catch (error) {
+      console.log(error)
+      toast.error('something went wrong')
+    }
   }
   return (
     <Layout  title={'Dashboard-Create-Product'}>
