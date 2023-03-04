@@ -51,7 +51,7 @@ const CreateCategory = () => {
     try {
       const {data} = await axios.put(`/api/v1/category/update-category/${selected._id}`,{name:updatedName});
       if(data.success){
-        toast.success(data.message)
+        toast.success(`${updatedName} is updated`)
         setSelected(null)
         setUpdatedName("")
         setVisible(false)
@@ -92,7 +92,9 @@ const CreateCategory = () => {
         <tr>
         <td key={c._id}>{c.name}</td>
         <td>
-          <button className="btn btn-primary ms-2" onClick={()=> {setVisible(true) ; setUpdatedName(c.name)}}>Edit</button>
+          <button className="btn btn-primary ms-2" onClick={()=> {setVisible(true) ; setUpdatedName(c.name);
+          setSelected(c)
+          }}>Edit</button>
           <button className="btn btn-danger ms-2">Delete</button>
         </td>
     </tr>
