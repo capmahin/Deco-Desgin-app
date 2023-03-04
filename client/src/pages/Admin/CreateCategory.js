@@ -4,10 +4,11 @@ import Layout from "../../components/Layout/Layout"
 import toast from 'react-hot-toast';
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
-
+import Modal from "antd/es/modal/Modal";
 const CreateCategory = () => {
   const [categories,setCategories] = useState([]);
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
+  const [visible, setVisible] = useState(false)
   //handle Form
   const handleSubmit = async (e) =>{
     e.preventDefault()
@@ -83,6 +84,7 @@ const CreateCategory = () => {
 </table>
 
     </div>
+    <Modal onCancel={()=> setVisible(false)} footer={null}></Modal>
     </div>
 </div>
 </div>
