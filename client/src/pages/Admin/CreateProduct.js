@@ -4,6 +4,11 @@ import Layout from "../../components/Layout/Layout"
 
 const CreateProduct = () => {
   const [categories, setCategories] = useState([]);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
   return (
     <Layout  title={'Dashboard-Create-Product'}>
