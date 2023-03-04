@@ -9,10 +9,15 @@ const CreateCategory = () => {
   const [categories,setCategories] = useState([]);
   const [name, setName] = useState("")
   //handle Form
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
     e.preventDefault()
     try {
-      
+      const {data} = await axios.post('/api/v1/category/create-category', {name})
+      if(data?.success){
+        toast.success(`${data.name} is created`)
+      }else{
+            toast.error(data.message);
+      }
     } catch (error) {
       console.log(error)
       toast.error('something went wrong in input form')
