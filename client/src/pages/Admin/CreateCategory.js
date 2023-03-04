@@ -47,7 +47,12 @@ const CreateCategory = () => {
 
   //update category
   const handleUpdate = async (e)=>{
-    
+    e.preventDefault()
+    try {
+      console.log(e)
+    } catch (error) {
+      toast.error('Something went wrong')
+    }
   }
   return (
     <Layout title={'Dashboard-Create-Category'}>
