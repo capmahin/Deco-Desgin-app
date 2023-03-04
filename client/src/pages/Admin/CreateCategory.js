@@ -68,7 +68,7 @@ const CreateCategory = () => {
    const handleDelete = async (pId)=>{
     
     try {
-      const {data} = await axios.put(`/api/v1/category/delete-category/${pId}`);
+      const {data} = await axios.delete(`/api/v1/category/delete-category/${pId}`);
       if(data.success){
         toast.success(`${name} is deleted`)
       
@@ -81,7 +81,7 @@ const CreateCategory = () => {
     } catch (error) {
       toast.error('Something went wrong')
     }
-  }
+  };
   return (
     <Layout title={'Dashboard-Create-Category'}>
         <div className="container-fluid m-3 p-3">
@@ -114,7 +114,7 @@ const CreateCategory = () => {
           <button className="btn btn-primary ms-2" onClick={()=> {setVisible(true) ; setUpdatedName(c.name);
           setSelected(c)
           }}>Edit</button>
-          <button className="btn btn-danger ms-2" onClick={handleDelete(c._id)}>Delete</button>
+          <button className="btn btn-danger ms-2" onClick={()=>handleDelete(c._id)}>Delete</button>
         </td>
     </tr>
         </>
