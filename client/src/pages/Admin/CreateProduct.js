@@ -56,8 +56,8 @@ const CreateProduct = () => {
 
       <div className="mb-3">
         <label htmlFor="upload images" className="btn btn-outline-secondary">
-          {photo && photo.name}
-          <input type="file" name="" id="" />
+          {photo && photo.name} : "Upload Photo"
+          <input type="file" name="photo"  />
         </label>
       </div>
     </div>
