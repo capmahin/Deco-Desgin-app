@@ -57,7 +57,10 @@ const CreateProduct = () => {
       <div className="mb-3">
         <label htmlFor="upload images" className="btn btn-outline-secondary">
           {photo && photo.name} : "Upload Photo"
-          <input type="file" name="photo"  />
+          <input type="file" name="photo" accept="image/*" 
+          onChange={(e)=> setPhoto(e.target.files[0])}
+          hidden
+          />
         </label>
       </div>
     </div>
