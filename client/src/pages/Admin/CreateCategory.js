@@ -14,7 +14,8 @@ const CreateCategory = () => {
     try {
       const {data} = await axios.post('/api/v1/category/create-category', {name})
       if(data?.success){
-        toast.success(`${data.name} is created`)
+        toast.success(`${data.name} is created`);
+        getAllCategory();
       }else{
             toast.error(data.message);
       }
@@ -49,7 +50,7 @@ const CreateCategory = () => {
     </div>
     <div className="col-md-9">
     <h1>Manage Category</h1>
-    <div className="p3">
+    <div className="p-3 w-50">
       <CategoryForm  handleSubmit={handleSubmit} value={name} setValue={setName}/>
     </div>
     <div className="w-75">
