@@ -34,8 +34,8 @@ const CreateProduct = () => {
   },[]);
 
   //create product function
-  const handleCreate = () =>{
-    
+  const handleCreate = async(e) =>{
+    e.preventDefault()
   }
   return (
     <Layout  title={'Dashboard-Create-Product'}>
