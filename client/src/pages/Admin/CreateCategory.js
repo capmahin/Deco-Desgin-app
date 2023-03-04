@@ -8,7 +8,9 @@ import Modal from "antd/es/modal/Modal";
 const CreateCategory = () => {
   const [categories,setCategories] = useState([]);
   const [name, setName] = useState("");
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
+  const  [selected , setSelected] = useState(null);
+  const [updatedName, setUpdatedName] = useState("");
   //handle Form
   const handleSubmit = async (e) =>{
     e.preventDefault()
@@ -41,7 +43,12 @@ const CreateCategory = () => {
 
   useEffect(()=>{
     getAllCategory();
-  },[])
+  },[]);
+
+  //update category
+  const handleUpdate = async (e)=>{
+    
+  }
   return (
     <Layout title={'Dashboard-Create-Category'}>
         <div className="container-fluid m-3 p-3">
@@ -71,7 +78,7 @@ const CreateCategory = () => {
         <tr>
         <td key={c._id}>{c.name}</td>
         <td>
-          <button className="btn btn-primary ms-2" onClick={()=> setVisible(true)}>Edit</button>
+          <button className="btn btn-primary ms-2" onClick={()=> {setVisible(true) ; setUpdatedName(c.name)}}>Edit</button>
           <button className="btn btn-danger ms-2">Delete</button>
         </td>
     </tr>
@@ -85,7 +92,9 @@ const CreateCategory = () => {
 
     </div>
     <Modal onCancel={()=> setVisible(false)} footer={null} 
-    visible={visible}></Modal>
+    visible={visible}>
+      <CategoryForm value={updatedName} setValue={setUpdatedName} handleSubmit={handleUpdate}/>
+    </Modal>
     </div>
 </div>
 </div>
