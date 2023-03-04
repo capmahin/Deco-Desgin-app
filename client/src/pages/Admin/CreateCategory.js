@@ -6,7 +6,18 @@ import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 
 const CreateCategory = () => {
-  const [categories,setCategories] = useState([])
+  const [categories,setCategories] = useState([]);
+  const [name, setName] = useState("")
+  //handle Form
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    try {
+      
+    } catch (error) {
+      console.log(error)
+      toast.error('something went wrong in input form')
+    }
+  }
 
   //get all cat
   const getAllCategory = async () =>{
