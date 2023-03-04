@@ -71,6 +71,9 @@ const CreateProduct = () => {
           </div>
         )}
       </div>
+      <div className="mb-3">
+        <input type="text" value={name} placeholder="write a name" className="form-control" />
+      </div>
     </div>
     </div>
 </div>
