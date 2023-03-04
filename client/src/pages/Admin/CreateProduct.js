@@ -3,10 +3,12 @@ import AdminMenu from "../../components/Layout/AdminMenu"
 import Layout from "../../components/Layout/Layout"
 import toast from 'react-hot-toast';
 import axios from "axios";
-import {Select} from 'antd'
+import {Select} from 'antd';
+import { useNavigate } from "react-router-dom";
 const {Option} = Select
 
 const CreateProduct = () => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -44,7 +46,14 @@ const CreateProduct = () => {
       productData.append("quantity",quantity)
       productData.append("photo",photo)
       productData.append("category",category)
-      const {data} = axios.post('/api/v1/product/create-product',)
+      const {data} = axios.post('/api/v1/product/create-product', productData);
+      if(data?.success){
+        toast.error(data?.message)
+      }else{
+        
+        toast.success('Product Created Successfully')
+        navigate('/dashboard/admin/products')
+      }
     } catch (error) {
       console.log(error)
       toast.error('something went wrong')
@@ -65,7 +74,7 @@ const CreateProduct = () => {
       >
  {
   categories?.map(c => (
-    <Option key={c._id} value={c.name}>
+    <Option key={c._id} value={c._id}>
       {c.name}
     </Option>
   ))
