@@ -32,6 +32,11 @@ const CreateProduct = () => {
   useEffect(()=>{
     getAllCategory();
   },[]);
+
+  //create product function
+  const handleCreate = () =>{
+    
+  }
   return (
     <Layout  title={'Dashboard-Create-Product'}>
         <div className="container-fluid m-3 p-3">
@@ -105,6 +110,9 @@ const CreateProduct = () => {
           <Option value="0">No</Option>
           <Option value="1">Yes</Option>   
         </Select>
+      </div>
+      <div className="mb-3">
+        <button className="btn btn-primary" onClick={handleCreate}>CREATE PRODUCT</button>
       </div>
     </div>
     </div>
