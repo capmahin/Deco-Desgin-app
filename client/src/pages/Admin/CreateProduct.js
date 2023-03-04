@@ -4,6 +4,7 @@ import Layout from "../../components/Layout/Layout"
 
 const CreateProduct = () => {
   const [categories, setCategories] = useState([]);
+  const [photo, setPhoto] = useState("");
   return (
     <Layout  title={'Dashboard-Create-Product'}>
         <div className="container-fluid m-3 p-3">
