@@ -71,7 +71,7 @@ const CreateCategory = () => {
         <tr>
         <td key={c._id}>{c.name}</td>
         <td>
-          <button className="btn btn-primary ms-2">Edit</button>
+          <button className="btn btn-primary ms-2" onClick={()=> setVisible(true)}>Edit</button>
           <button className="btn btn-danger ms-2">Delete</button>
         </td>
     </tr>
@@ -84,7 +84,8 @@ const CreateCategory = () => {
 </table>
 
     </div>
-    <Modal onCancel={()=> setVisible(false)} footer={null}></Modal>
+    <Modal onCancel={()=> setVisible(false)} footer={null} 
+    visible={visible}></Modal>
     </div>
 </div>
 </div>
