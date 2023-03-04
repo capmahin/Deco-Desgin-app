@@ -50,7 +50,7 @@ const CreateCategory = () => {
     <div className="col-md-9">
     <h1>Manage Category</h1>
     <div className="p3">
-      <CategoryForm/>
+      <CategoryForm  handleSubmit={handleSubmit} value={name} setValue={setName}/>
     </div>
     <div className="w-75">
    <table className="table">
