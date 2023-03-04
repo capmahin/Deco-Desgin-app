@@ -14,6 +14,7 @@ const CreateProduct = () => {
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
+  const [photo, setPhoto] = useState("");
   
   //get all category
   const getAllCategory = async () =>{
@@ -46,12 +47,19 @@ const CreateProduct = () => {
       >
  {
   categories?.map(c => (
-    <Option key={c._id}>
+    <Option key={c._id} value={c.name}>
       {c.name}
     </Option>
   ))
  }
       </Select>
+
+      <div className="mb-3">
+        <label htmlFor="upload images" className="btn btn-outline-secondary">
+          {photo && photo.name}
+          <input type="file" name="" id="" />
+        </label>
+      </div>
     </div>
     </div>
 </div>
