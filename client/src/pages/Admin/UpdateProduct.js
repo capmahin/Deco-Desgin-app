@@ -18,6 +18,10 @@ const UpdateProduct = () => {
     const [shipping, setShipping] = useState("");
     const [photo, setPhoto] = useState("");
     
+    //get single product
+    const getSingleProduct = async () =>{
+        
+    }
     //get all category
     const getAllCategory = async () =>{
       try {
@@ -67,7 +71,7 @@ const UpdateProduct = () => {
     <AdminMenu/>
 </div>
 <div className="col-md-9">
-<h1>Create Products</h1>
+<h1>Update Products</h1>
 <div className="m-1 w-75">
   <Select bordered={false} placeholder ='Select a category' size="large" showSearch className="form-select mb-3"
   onChange={(value)=>{setCategory(value)}}
@@ -134,7 +138,7 @@ categories?.map(c => (
     </Select>
   </div>
   <div className="mb-3">
-    <button className="btn btn-primary" onClick={handleCreate}>CREATE PRODUCT</button>
+    <button className="btn btn-primary" onClick={handleCreate}>UPDATE PRODUCT</button>
   </div>
 </div>
 </div>
