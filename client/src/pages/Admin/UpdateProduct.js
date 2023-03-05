@@ -25,6 +25,7 @@ const UpdateProduct = () => {
         try {
             const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`);
             setName(data.product.name);
+            setId(data.product._id)
             setDescription(data.product.description);
             setPrice(data.product.price);
             setPrice(data.product.price);
@@ -149,6 +150,7 @@ categories?.map(c => (
     onChange={(value)=>{
       setShipping(value);
     }}
+    value={shipping ? "yes" : "No"}
     >
       <Option value="0">No</Option>
       <Option value="1">Yes</Option>   
