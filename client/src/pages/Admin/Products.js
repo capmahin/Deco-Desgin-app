@@ -1,9 +1,19 @@
 import React from 'react'
-import Layout from './../../components/Layout/Layout';
+import AdminMenu from "../../components/Layout/AdminMenu"
+
 
 const Products = () => {
   return (
-    <Layout>Products</Layout>
+    <div>
+        <div className="row">
+            <div className="col-md-3">
+            <AdminMenu/>
+            </div>
+            <div className="col-md-9">
+                
+            </div>
+        </div>
+    </div>
   )
 }
 
