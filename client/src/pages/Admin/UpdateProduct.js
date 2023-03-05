@@ -4,11 +4,12 @@ import Layout from "../../components/Layout/Layout"
 import toast from 'react-hot-toast';
 import axios from "axios";
 import {Select} from 'antd';
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useParams} from "react-router-dom";
 const {Option} = Select
 
 const UpdateProduct = () => {
     const navigate = useNavigate();
+    const params = useParams();
     const [categories, setCategories] = useState([]);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -20,7 +21,11 @@ const UpdateProduct = () => {
     
     //get single product
     const getSingleProduct = async () =>{
-        
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
     //get all category
     const getAllCategory = async () =>{
