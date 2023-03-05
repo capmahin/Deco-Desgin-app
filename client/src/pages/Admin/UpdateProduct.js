@@ -22,7 +22,7 @@ const UpdateProduct = () => {
     //get single product
     const getSingleProduct = async () =>{
         try {
-            
+            const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`)
         } catch (error) {
             console.log(error)
         }
