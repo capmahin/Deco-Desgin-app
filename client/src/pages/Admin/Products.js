@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import AdminMenu from "../../components/Layout/AdminMenu"
 import Layout from './../../components/Layout/Layout';
+import axios from "axios";
+import toast from 'react-hot-toast';
 
 
 const Products = () => {
+    const [product, setProduct] = useState([]);
+
+    //get all products
+    const getAllProducts = async()=>{
+        try {
+            const {data} = await axios.get('/api/v1/product/get-product')
+        } catch (error) {
+            console.log(error)
+            toast.error('Something went wrong')
+        }
+    }
   return (
     <Layout>
         <div className="row">
