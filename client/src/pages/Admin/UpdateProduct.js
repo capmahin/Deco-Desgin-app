@@ -66,7 +66,7 @@ const UpdateProduct = () => {
         productData.append("description",description)
         productData.append("price",price)
         productData.append("quantity",quantity)
-        productData.append("photo",photo)
+        photo && productData.append("photo",photo)
         productData.append("category",category)
         const {data} = axios.post('/api/v1/product/create-product', productData);
         if(data?.success){
@@ -116,9 +116,14 @@ categories?.map(c => (
     </label>
   </div>
   <div className="mb-3">
-    {photo && (
+    {photo ? (
       <div className="text-center">
         <img src={URL.createObjectURL(photo)} alt="product-photo" height={'200px'}
+        className="img img-responsive" />
+      </div>
+    ) : (
+        <div className="text-center">
+        <img src={`/api/v1/product/product-photo/${id}`} alt="product-photo" height={'200px'}
         className="img img-responsive" />
       </div>
     )}
