@@ -18,12 +18,19 @@ const UpdateProduct = () => {
     const [quantity, setQuantity] = useState("");
     const [shipping, setShipping] = useState("");
     const [photo, setPhoto] = useState("");
+    const [id,setId] = useState("");
     
     //get single product
     const getSingleProduct = async () =>{
         try {
             const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`);
             setName(data.product.name);
+            setDescription(data.product.description);
+            setPrice(data.product.price);
+            setPrice(data.product.price);
+            setQuantity(data.product.quantity);
+            setShipping(data.product.shipping);
+            setCategory(data.product.category);
         } catch (error) {
             console.log(error)
         }
