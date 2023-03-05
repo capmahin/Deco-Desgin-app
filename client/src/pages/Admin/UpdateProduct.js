@@ -22,11 +22,16 @@ const UpdateProduct = () => {
     //get single product
     const getSingleProduct = async () =>{
         try {
-            const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`)
+            const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`);
+            setName(data.product.name);
         } catch (error) {
             console.log(error)
         }
-    }
+    };
+    useEffect(()=>{
+        getSingleProduct();
+        //eslint-disable-next-line
+    },[])
     //get all category
     const getAllCategory = async () =>{
       try {
