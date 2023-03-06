@@ -86,8 +86,10 @@ const UpdateProduct = () => {
 
     const handleDelete = async() =>{
        try {
+        let answer = window.prompt('Are You Sure want to delete this product ?')
         const {data} = await axios.delete(`/api/v1/product/delete-product/${id}`);
-        toast.success('Product Deleted Successfully')
+        toast.success('Product Deleted Successfully');
+        navigate('/dashboard/admin/products')
        } catch (error) {
         console.log(error)
         toast.error('Something went wrong')
