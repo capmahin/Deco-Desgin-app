@@ -84,8 +84,12 @@ const UpdateProduct = () => {
 
     //delete a product
 
-    const handleDelete = () =>{
-      
+    const handleDelete = async() =>{
+       try {
+        
+       } catch (error) {
+        console.log(error)
+       }
     }
   return (
     <Layout  title={'Dashboard-Create-Product'}>
