@@ -81,6 +81,12 @@ const UpdateProduct = () => {
         toast.error('something went wrong')
       }
     };
+
+    //delete a product
+
+    const handleDelete = () =>{
+      
+    }
   return (
     <Layout  title={'Dashboard-Create-Product'}>
     <div className="container-fluid m-3 p-3">
@@ -166,6 +172,9 @@ categories?.map(c => (
   </div>
   <div className="mb-3">
     <button className="btn btn-primary" onClick={handleUpdate}>UPDATE PRODUCT</button>
+  </div>
+  <div className="mb-3">
+    <button className="btn btn-danger" onClick={handleDelete}>DELETE PRODUCT</button>
   </div>
 </div>
 </div>
