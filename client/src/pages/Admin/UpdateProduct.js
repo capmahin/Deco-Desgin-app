@@ -31,7 +31,7 @@ const UpdateProduct = () => {
             setPrice(data.product.price);
             setQuantity(data.product.quantity);
             setShipping(data.product.shipping);
-            setCategory(data.product.category);
+            setCategory(data.product.category._id);
         } catch (error) {
             console.log(error)
         }
@@ -58,7 +58,7 @@ const UpdateProduct = () => {
     },[]);
   
     //create product function
-    const handleCreate = async(e) =>{
+    const handleUpdate = async(e) =>{
       e.preventDefault()
       try {
         const productData = new FormData()
@@ -68,13 +68,13 @@ const UpdateProduct = () => {
         productData.append("quantity",quantity)
         photo && productData.append("photo",photo)
         productData.append("category",category)
-        const {data} = axios.post('/api/v1/product/create-product', productData);
+        const {data} = axios.put(`/api/v1/product/update-product/${id}`, productData);
         if(data?.success){
           toast.error(data?.message)
         }else{
           
-          toast.success('Product Created Successfully')
-          navigate('/dashboard/admin/products')
+          toast.success('Product Updated Successfully')
+          navigate("/dashboard/admin/products");
         }
       } catch (error) {
         console.log(error)
@@ -94,7 +94,7 @@ const UpdateProduct = () => {
   <Select bordered={false} placeholder ='Select a category' size="large" showSearch className="form-select mb-3"
   onChange={(value)=>{setCategory(value);
 }}
-value={category.name}
+value={category}
  
   >
 {
@@ -165,7 +165,7 @@ categories?.map(c => (
     </Select>
   </div>
   <div className="mb-3">
-    <button className="btn btn-primary" onClick={handleCreate}>UPDATE PRODUCT</button>
+    <button className="btn btn-primary" onClick={handleUpdate}>UPDATE PRODUCT</button>
   </div>
 </div>
 </div>
