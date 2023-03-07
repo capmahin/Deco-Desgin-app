@@ -62,7 +62,7 @@ const HomePage = () => {
 
   const filterProduct = async () =>{
     try {
-      const {data} = await axios.get()
+      const {data} = await axios.post('/api/v1/product/product-filters',{checked, radio})
     } catch (error) {
       console.log(error)
     }
