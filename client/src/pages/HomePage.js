@@ -5,6 +5,7 @@ import { useAuth } from "../context/auth";
 const HomePage = () => {
   const [auth, setAuth] = useAuth();
   const [products, setProducts] = useState([]);
+  const [categories,setCategories] = useState([]);
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row">
