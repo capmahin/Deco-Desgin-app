@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 import { useAuth } from "../context/auth";
+import axios from "axios";
 
 const HomePage = () => {
   const [auth, setAuth] = useAuth();
@@ -10,7 +11,7 @@ const HomePage = () => {
   //get products
   const getAllProducts = async()=>{
     try {
-      
+      const {data} = await axios.get()
     } catch (error) {
       console.log(error)
     }
