@@ -41,9 +41,10 @@ const HomePage = () => {
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row mt-3">
-       <div className="col-md-3">
+       <div className="col-md-2">
         <h4 className="text-center">Filter By Category</h4>
-        {
+       <div className="d-flex flex-column">
+       {
           categories?.map(c =>(
             <Checkbox key={c._id} onChange={(e)=> console.log(e)}>
               {c.name}
@@ -51,6 +52,7 @@ const HomePage = () => {
             
           ))
         }
+       </div>
         </div> 
        <div className="col-md-9">
         <h1 className="text-center">All Products</h1>
