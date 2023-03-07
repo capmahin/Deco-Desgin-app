@@ -105,7 +105,7 @@ const UpdateProduct = () => {
 </div>
 <div className="col-md-9">
 <h1>Update Products</h1>
-<div className="m-1 w-75">
+<div className="m-1 w-75 ">
   <Select bordered={false} placeholder ='Select a category' size="large" showSearch className="form-select mb-3"
   onChange={(value)=>{setCategory(value);
 }}
