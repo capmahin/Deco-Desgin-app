@@ -168,3 +168,19 @@ export const updateProductController = async (req,res)=>{
         })
     }
 }
+
+//filter product
+
+ export const productFiltersController = async (req,res) =>{
+
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            success:false,
+            message:'Error while Filtering Products',
+            error
+        })
+    }
+ } 
