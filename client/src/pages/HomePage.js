@@ -7,7 +7,8 @@ const HomePage = () => {
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row">
-
+       <div className="col-md-3"></div> 
+       <div className="col-md-9"></div> 
        </div>
     </Layout>
   )
