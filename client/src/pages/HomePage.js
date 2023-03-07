@@ -2,11 +2,28 @@ import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 import { useAuth } from "../context/auth";
 import axios from "axios";
-
+import { Checkbox} from 'antd'
 const HomePage = () => {
   const [auth, setAuth] = useAuth();
   const [products, setProducts] = useState([]);
   const [categories,setCategories] = useState([]);
+
+  //get all cat
+  const getAllCategory = async () =>{
+    try {
+      const {data} = await axios.get('/api/v1/category/get-category')
+      if(data?.success){
+        setCategories(data?.category)
+      }
+    } catch (error) {
+      console.log(error)
+      
+    }
+  };
+
+  useEffect(()=>{
+    getAllCategory();
+  },[]);
 
   //get products
   const getAllProducts = async()=>{
@@ -36,8 +53,8 @@ const HomePage = () => {
               <div className="card-body">
               <h5 className="card-title">{p.name}</h5>
               <p className="card-text">{p.description}</p>
-              <button class="btn btn-primary">More Details</button>
-              <button class="btn btn-secondary">ADD TO CART</button>
+              <button class="btn btn-primary ms-1">More Details</button>
+              <button class="btn btn-secondary ms-1">ADD TO CART</button>
              </div>
             </div>
                    
