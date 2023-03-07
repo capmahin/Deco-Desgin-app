@@ -36,7 +36,8 @@ const HomePage = () => {
               <div className="card-body">
               <h5 className="card-title">{p.name}</h5>
               <p className="card-text">{p.description}</p>
-              <button class="btn btn-primary">Go somewhere</button>
+              <button class="btn btn-primary">More Details</button>
+              <button class="btn btn-secondary">ADD TO CART</button>
              </div>
             </div>
                    
