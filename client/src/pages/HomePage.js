@@ -22,7 +22,7 @@ const HomePage = () => {
     }
   };
 
-  //filter ny cat
+ 
 
 
   useEffect(()=>{
@@ -31,15 +31,7 @@ const HomePage = () => {
 
   //get products
 
-  const handleFilter = (value,id)=>{
-let all = [...checked]
-if(value){
-  all.push(id)
-}else{
-  all = all.filter(c => c!== id)
-}
-setChecked(all);
-  };
+  
   const getAllProducts = async()=>{
     try {
       const {data} = await axios.get('/api/v1/product/get-product')
@@ -48,6 +40,17 @@ setChecked(all);
       console.log(error)
     }
   };
+
+  //filter by cat
+  const handleFilter = (value,id)=>{
+    let all = [...checked]
+    if(value){
+      all.push(id)
+    }else{
+      all = all.filter(c => c!== id)
+    }
+    setChecked(all);
+      };
 
   useEffect(()=>{
     getAllProducts();
@@ -69,6 +72,7 @@ setChecked(all);
        </div>
         </div> 
        <div className="col-md-9">
+        {JSON.stringify(checked,null,4)}
         <h1 className="text-center">All Products</h1>
         <div className="d-flex flex-wrap">
           {products?.map(p=>(      
