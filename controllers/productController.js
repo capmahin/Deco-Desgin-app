@@ -177,7 +177,7 @@ export const updateProductController = async (req,res)=>{
         const {checked, radio} = req.body
         let args = {}
         if(checked.length > 0) args.category = checked
-        
+        if(radio.length) args.price = {$gte : radio[0], $lte: radio[1]}
     } catch (error) {
         console.log(error)
         res.status(400).send({
