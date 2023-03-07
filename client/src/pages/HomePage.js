@@ -6,6 +6,11 @@ const HomePage = () => {
   const [auth, setAuth] = useAuth();
   const [products, setProducts] = useState([]);
   const [categories,setCategories] = useState([]);
+
+  //get products
+  const getAllProducts = async()=>{
+    
+  }
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row mt-3">
