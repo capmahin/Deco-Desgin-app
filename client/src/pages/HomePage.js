@@ -72,13 +72,16 @@ const HomePage = () => {
           ))
         }
        </div>
-       <h4 className="text-center">Filter By Price</h4>
+       
+       {/* Price Filter */}
+
+       <h4 className="text-center mt-4">Filter By Price</h4>
        <div className="d-flex flex-column">
        <Radio.Group onChange={e => setRadio(e.target.value)}>
         {
           Prices?.map(p =>(
            <div key={p._id}>
-             <Radio>{
+             <Radio value={p.array}>{
               p.name
               }</Radio>
            </div>
@@ -88,7 +91,7 @@ const HomePage = () => {
        </div>
         </div> 
        <div className="col-md-9">
-        {JSON.stringify(checked,null,4)}
+        {JSON.stringify(radio,null,4)}
         <h1 className="text-center">All Products</h1>
         <div className="d-flex flex-wrap">
           {products?.map(p=>(      
