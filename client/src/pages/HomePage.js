@@ -6,7 +6,9 @@ const HomePage = () => {
   const [auth, setAuth] = useAuth()
   return (
     <Layout title={'All Products - Best offers'}>
-       
+       <div className="row">
+
+       </div>
     </Layout>
   )
 }
