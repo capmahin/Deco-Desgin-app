@@ -19,7 +19,7 @@ const HomePage = () => {
   };
 
   useEffect(()=>{
-    
+    getAllProducts();
   },[])
   return (
     <Layout title={'All Products - Best offers'}>
