@@ -56,7 +56,17 @@ const HomePage = () => {
 
   useEffect(()=>{
     getAllProducts();
-  },[])
+  },[]);
+
+  //get filtered product
+
+  const filterProduct = async () =>{
+    try {
+      const {data} = await axios.get()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row mt-3">
