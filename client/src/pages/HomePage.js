@@ -70,6 +70,10 @@ const HomePage = () => {
           ))
         }
        </div>
+       <h4 className="text-center">Filter By Price</h4>
+       <div className="d-flex flex-column">
+       
+       </div>
         </div> 
        <div className="col-md-9">
         {JSON.stringify(checked,null,4)}
