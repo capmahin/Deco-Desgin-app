@@ -31,9 +31,15 @@ const HomePage = () => {
 
   //get products
 
-  const handleFilter = ()=>{
-    
-  }
+  const handleFilter = (value,id)=>{
+let all = [...checked]
+if(value){
+  all.push(id)
+}else{
+  all = all.filter(c => c!== id)
+}
+setChecked(all);
+  };
   const getAllProducts = async()=>{
     try {
       const {data} = await axios.get('/api/v1/product/get-product')
