@@ -16,7 +16,11 @@ const HomePage = () => {
     } catch (error) {
       console.log(error)
     }
-  }
+  };
+
+  useEffect(()=>{
+    
+  },[])
   return (
     <Layout title={'All Products - Best offers'}>
        <div className="row mt-3">
