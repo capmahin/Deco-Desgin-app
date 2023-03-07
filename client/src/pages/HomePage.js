@@ -8,9 +8,9 @@ const HomePage = () => {
   const [categories,setCategories] = useState([]);
   return (
     <Layout title={'All Products - Best offers'}>
-       <div className="row">
+       <div className="row mt-3">
        <div className="col-md-3">
-        <h5 className="text-center">Filter By Category</h5>
+        <h4 className="text-center">Filter By Category</h4>
         </div> 
        <div className="col-md-9">
         <h1 className="text-center">All Products</h1>
