@@ -60,6 +60,10 @@ const HomePage = () => {
     //eslint-disable-next-line
   },[]);
 
+  useEffect(()=>{
+    if(checked.length || radio.length) filterProduct()
+  },[])
+
   //get filtered product
 
   const filterProduct = async () =>{
