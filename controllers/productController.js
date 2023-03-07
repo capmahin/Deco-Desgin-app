@@ -174,6 +174,9 @@ export const updateProductController = async (req,res)=>{
  export const productFiltersController = async (req,res) =>{
 
     try {
+        const {checked, radio} = req.body
+        let args = {}
+        if(checked.length > 0) args.category = checked
         
     } catch (error) {
         console.log(error)
