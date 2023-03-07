@@ -2,12 +2,14 @@ import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 
 import axios from "axios";
-import { Checkbox} from 'antd'
+import { Checkbox,Radio} from 'antd'
+import { Prices } from "../components/Prices";
 const HomePage = () => {
   
   const [products, setProducts] = useState([]);
   const [categories,setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
+  const [radio, setRadio] = useState([]);
 
   //get all cat
   const getAllCategory = async () =>{
@@ -72,7 +74,17 @@ const HomePage = () => {
        </div>
        <h4 className="text-center">Filter By Price</h4>
        <div className="d-flex flex-column">
-       
+       <Radio.Group onChange={e => setRadio(e.target.value)}>
+        {
+          Prices?.map(p =>(
+           <div key={p._id}>
+             <Radio>{
+              p.name
+              }</Radio>
+           </div>
+          ))
+        }
+       </Radio.Group>
        </div>
         </div> 
        <div className="col-md-9">
