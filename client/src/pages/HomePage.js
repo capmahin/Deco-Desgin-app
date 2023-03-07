@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
-import { useAuth } from "../context/auth";
+
 import axios from "axios";
 import { Checkbox} from 'antd'
 const HomePage = () => {
-  const [auth, setAuth] = useAuth();
+  
   const [products, setProducts] = useState([]);
   const [categories,setCategories] = useState([]);
+  const [checked, setChecked] = useState([]);
 
   //get all cat
   const getAllCategory = async () =>{
@@ -21,11 +22,18 @@ const HomePage = () => {
     }
   };
 
+  //filter ny cat
+
+
   useEffect(()=>{
     getAllCategory();
   },[]);
 
   //get products
+
+  const handleFilter = ()=>{
+    
+  }
   const getAllProducts = async()=>{
     try {
       const {data} = await axios.get('/api/v1/product/get-product')
@@ -46,7 +54,7 @@ const HomePage = () => {
        <div className="d-flex flex-column">
        {
           categories?.map(c =>(
-            <Checkbox key={c._id} onChange={(e)=> console.log(e)}>
+            <Checkbox key={c._id} onChange={(e)=> handleFilter(e.target.checked,c._id)}>
               {c.name}
             </Checkbox>
             
