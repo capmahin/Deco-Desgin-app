@@ -9,7 +9,11 @@ const HomePage = () => {
 
   //get products
   const getAllProducts = async()=>{
-    
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <Layout title={'All Products - Best offers'}>
