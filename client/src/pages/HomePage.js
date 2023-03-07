@@ -13,7 +13,11 @@ const HomePage = () => {
         <h5 className="text-center">Filter By Category</h5>
         </div> 
        <div className="col-md-9">
-        <h1 className="text-center">All Products</h1></div> 
+        <h1 className="text-center">All Products</h1>
+        <div className="d-flex flex-wrap">
+          <h1>products</h1>
+          </div>
+          </div> 
        </div>
     </Layout>
   )
