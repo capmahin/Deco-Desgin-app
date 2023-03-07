@@ -55,7 +55,9 @@ const HomePage = () => {
       };
 
   useEffect(()=>{
+    if(!checked.length || !radio.length)
     getAllProducts();
+    //eslint-disable-next-line
   },[]);
 
   //get filtered product
@@ -63,6 +65,7 @@ const HomePage = () => {
   const filterProduct = async () =>{
     try {
       const {data} = await axios.post('/api/v1/product/product-filters',{checked, radio})
+      setProducts(data?.products)
     } catch (error) {
       console.log(error)
     }
