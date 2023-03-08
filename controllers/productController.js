@@ -237,7 +237,11 @@ export const productListController = async (req,res) =>{
 export const searchProductController =  async (req,res)=>{
     try {
         const {keyword} = req.params
-        const result = await productModel.find()
+        const result = await productModel.find({
+            $or:[
+                {name:{$regex: keyword, $option:"i"}}
+            ]
+        })
     } catch (error) {
         console.log(error)
         res.status(400).send({
