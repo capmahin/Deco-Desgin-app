@@ -1,42 +1,29 @@
 
-import { useState, useEffect, useContext, createContext } from "react";
-import axios from 'axios'
-
-const AuthContext = createContext()
+import { useState,  useContext, createContext } from "react";
 
 
+const SearchContext = createContext()
 
-const AuthProvider = ({children}) =>{
+
+
+const SearchProvider = ({children}) =>{
     const [auth,setAuth] = useState({
-        user:null,
-        token:""
+       keyword:"",
+       results:[]
+
     });
 
-    //default axios
+    
 
-    axios.defaults.headers.common['Authorization'] = auth?.token;
-
-    useEffect(()=>{
-        const data = localStorage.getItem('auth')
-        if(data){
-            const parseData = JSON.parse(data)
-            setAuth({
-                ...auth,
-                user:parseData.user,
-                token:parseData.token
-
-            })
-        }
-        //eslint-disable-next-line
-    },[]);
+   
     return(
-        <AuthContext.Provider value={[auth,setAuth]}>
+        <SearchContext.Provider value={[auth,setAuth]}>
             {children}
-        </AuthContext.Provider>
+        </SearchContext.Provider>
     )
 }
 
 //custom hook
-const useAuth = () => useContext(AuthContext)
+const useSearch = () => useContext(SearchContext)
 
-export {useAuth, AuthProvider}
+export {useSearch, SearchProvider}
