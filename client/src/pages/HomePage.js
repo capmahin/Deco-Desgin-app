@@ -13,6 +13,11 @@ const HomePage = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
 
+  //getTOtal Count
+  const getTotal = async () =>{
+    
+  }
+
   //get all cat
   const getAllCategory = async () =>{
     try {
