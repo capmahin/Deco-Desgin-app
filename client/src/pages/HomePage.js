@@ -13,16 +13,7 @@ const HomePage = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
 
-  //getTOtal Count
-  const getTotal = async () =>{
-    try {
-      const {data} = await axios.get('/api/v1/product/product-count');
-      setTotal(data?.total)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+ 
   //get all cat
   const getAllCategory = async () =>{
     try {
@@ -37,10 +28,9 @@ const HomePage = () => {
   };
 
  
-
-
   useEffect(()=>{
     getAllCategory();
+    getTotal();
   },[]);
 
   //get products
@@ -54,6 +44,18 @@ const HomePage = () => {
       console.log(error)
     }
   };
+
+   //getTOtal Count
+   const getTotal = async () =>{
+    try {
+      const {data} = await axios.get('/api/v1/product/product-count');
+      setTotal(data?.total)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+
 
   //filter by cat
   const handleFilter = (value,id)=>{
