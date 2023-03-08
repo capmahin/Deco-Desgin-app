@@ -26,4 +26,8 @@ router.delete('/delete-product/:pid', deleteProductController);
 //filter product
 router.post('/product-filters', productFiltersController);
 
+//product count
+
+router.get('/product-count', productCountController)
+
 export default router;
