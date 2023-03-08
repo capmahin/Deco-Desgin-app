@@ -4,6 +4,7 @@ import {FiShoppingBag} from 'react-icons/fi';
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import Dashboard from './../../pages/user/Dashboard';
+import SearchInput from "../Form/Searchinput";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -24,6 +25,7 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
       <Link to="/" className="navbar-brand" ><FiShoppingBag/> Deco-Design</Link>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+        <SearchInput/>
         <li className="nav-item">
           <NavLink to="/" className="nav-link"  >Home</NavLink>
         </li>

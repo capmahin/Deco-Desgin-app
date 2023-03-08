@@ -11,6 +11,7 @@ const SearchInput = () => {
         try {
             const {data} = await axios.get(`/api/v1/product/search/${values.keyword}`)
             setValues({...values, results: data});
+            navigate('/search');
         } catch (error) {
             console.log(error)
         }
