@@ -10,6 +10,7 @@ const HomePage = () => {
   const [categories,setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
+  const [total, setTotal] = useState(0);
 
   //get all cat
   const getAllCategory = async () =>{
