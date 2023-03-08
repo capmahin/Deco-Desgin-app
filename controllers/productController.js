@@ -209,4 +209,14 @@ export const productCountController = async (req,res) =>{
             success:false,
         })
     }
+};
+
+//product list base on page
+
+export const productListController = async (req,res) =>{
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
