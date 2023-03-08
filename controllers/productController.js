@@ -195,5 +195,14 @@ export const updateProductController = async (req,res)=>{
 
  //product count
 export const productCountController = async (req,res) =>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            message:'Error in product count',
+            error,
+            success:false,
+        })
+    }
 }
