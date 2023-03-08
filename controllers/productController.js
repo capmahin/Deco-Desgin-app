@@ -218,5 +218,10 @@ export const productListController = async (req,res) =>{
         
     } catch (error) {
         console.log(error)
+        res.status(400).send({
+            success:false,
+            message:'error in per page ctrl',
+            error,
+        })
     }
 }
