@@ -39,9 +39,12 @@ const HomePage = () => {
   
   const getAllProducts = async()=>{
     try {
-      const {data} = await axios.get('/api/v1/product/get-product')
+      setLoading(true)
+      const {data} = await axios.get(`/api/v1/product/product-list/${page}`);
+      setLoading(false)
       setProducts(data.products);
     } catch (error) {
+      setLoading(false)
       console.log(error)
     }
   };
@@ -56,7 +59,14 @@ const HomePage = () => {
     }
   };
 
-
+//load more
+const loadMore = async() =>{
+  try {
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
 
   //filter by cat
   const handleFilter = (value,id)=>{
