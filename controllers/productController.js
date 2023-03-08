@@ -239,10 +239,10 @@ export const searchProductController =  async (req,res)=>{
         const {keyword} = req.params
         const result = await productModel.find({
             $or:[
-                {name:{$regex: keyword, $option:"i"}},
-                {description:{$regex: keyword, $option:"i"}}
+                {name:{$regex: keyword, $options:"i"}},
+                {description:{$regex: keyword, $options:"i"}}
             ]
-        })
+        }).select("-photo")
     } catch (error) {
         console.log(error)
         res.status(400).send({
