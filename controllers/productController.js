@@ -236,7 +236,8 @@ export const productListController = async (req,res) =>{
 
 export const searchProductController =  async (req,res)=>{
     try {
-        
+        const {keyword} = req.params
+        const result = await productModel.find()
     } catch (error) {
         console.log(error)
         res.status(400).send({
