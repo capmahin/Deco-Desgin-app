@@ -191,4 +191,9 @@ export const updateProductController = async (req,res)=>{
             error
         })
     }
- } 
+ } ;
+
+ //product count
+export const productCountController = async (req,res) =>{
+    
+}
