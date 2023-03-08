@@ -15,7 +15,11 @@ const HomePage = () => {
 
   //getTOtal Count
   const getTotal = async () =>{
-    
+    try {
+      const {data} = await axios.get('/api/v1/product/product-count')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   //get all cat
