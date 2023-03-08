@@ -9,7 +9,7 @@ const SearchContext = createContext()
 const SearchProvider = ({children}) =>{
     const [auth,setAuth] = useState({
        keyword:"",
-       results:[]
+       results:[],
 
     });
 
