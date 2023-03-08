@@ -235,5 +235,14 @@ export const productListController = async (req,res) =>{
 //search product
 
 export const searchProductController =  async (req,res)=>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            success:false,
+            message:'Error in Search Product',
+            error,
+        })
+    }
 }
