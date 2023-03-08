@@ -215,7 +215,8 @@ export const productCountController = async (req,res) =>{
 
 export const productListController = async (req,res) =>{
     try {
-        
+        const perPage = 6
+        const page = req.params.page ? req.params.page : 1
     } catch (error) {
         console.log(error)
         res.status(400).send({
