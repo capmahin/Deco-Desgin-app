@@ -230,4 +230,10 @@ export const productListController = async (req,res) =>{
             error,
         })
     }
+};
+
+//search product
+
+export const searchProductController =  async (req,res)=>{
+    
 }
