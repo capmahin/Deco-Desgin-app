@@ -25,14 +25,18 @@ const ProductDetails = () => {
     <Layout title={'Product-details'}>
        <div className="row container mt-2">
         <div className="col-md-6">
-        <img src={`/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} />
+        <img src={`/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} 
+        height="300"
+        width={"350px"}
+       
+        />
         </div>
         <div className="col-md-6 ">
             <h1 className="text-center">Products Details</h1>
             <h5>Name : {product.name}</h5>
             <h5>Description : {product.description}</h5>
             <h5>Price : {product.price}</h5>
-            <h5>Category : {product.category.name}</h5>
+            <h6>Category: {product.category.name}</h6>
             <button class="btn btn-secondary ms-1">ADD TO CART</button>
         </div>
        </div>
