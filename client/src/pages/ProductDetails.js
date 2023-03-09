@@ -6,6 +6,11 @@ import { useParams } from "react-router-dom";
 const ProductDetails = () => {
     const params = useParams();
     const [product, setProduct] = useState({});
+
+    //initalp details
+    useEffect(()=>{
+        if(params?.slug) getProduct();
+    },[params?.slug])
     //getProduct
 
     const getProduct = async () =>{
