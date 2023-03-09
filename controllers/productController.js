@@ -273,6 +273,6 @@ export const relatedProductController = async (req,res) =>{
             success:false,
             message:'Error while getting related product',
             error
-        })
+        });
     }
-}
+};

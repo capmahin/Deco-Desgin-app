@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 const ProductDetails = () => {
     const params = useParams();
     const [product, setProduct] = useState({});
+    const [relatedProducts, setRelatedProducts] = useState([])
 
     //initalp details
     useEffect(()=>{
