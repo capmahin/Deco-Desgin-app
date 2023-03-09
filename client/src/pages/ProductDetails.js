@@ -52,8 +52,10 @@ const ProductDetails = () => {
             <button class="btn btn-secondary ms-1">ADD TO CART</button>
         </div>
        </div>
+       <hr />
        <div className="row">
-        <h1>Similar Product</h1>
+        <h5>Similar Product</h5>
+        {relatedProducts.length <1 && <p> No Similar Products found </p>}
         <div className="d-flex flex-wrap">
           {relatedProducts?.map(p=>(      
              <div className="card m-2" style={{width: '18rem'}} >
