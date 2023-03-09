@@ -23,7 +23,13 @@ const ProductDetails = () => {
     }
   return (
     <Layout title={'Product-details'}>
-        <h1>Product Details</h1>
+       <div className="row">
+        <div className="col-md-5">image</div>
+        <div className="col-md-5">details</div>
+       </div>
+       <div className="row">
+        simillar produts
+       </div>
     </Layout>
   )
 }
