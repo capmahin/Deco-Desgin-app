@@ -10,7 +10,8 @@ const ProductDetails = () => {
 
     const getProduct = async () =>{
         try {
-            const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`)
+            const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`);
+            setProduct(data?.product)
         } catch (error) {
             console.log(error)
         }
