@@ -23,12 +23,14 @@ const ProductDetails = () => {
     }
   return (
     <Layout title={'Product-details'}>
-       <div className="row">
-        <div className="col-md-5">image</div>
-        <div className="col-md-5">details</div>
+       <div className="row container">
+        <div className="col-md-6">
+        <img src={`/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} />
+        </div>
+        <div className="col-md-6">details</div>
        </div>
        <div className="row">
-        simillar produts
+        similar products
        </div>
     </Layout>
   )
