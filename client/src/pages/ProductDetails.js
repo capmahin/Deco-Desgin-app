@@ -48,7 +48,7 @@ const ProductDetails = () => {
             <h5>Name : {product.name}</h5>
             <h5>Description : {product.description}</h5>
             <h5>Price : {product.price}</h5>
-            {/* <h6>Category: {product.category.name}</h6> */}
+            <h6>Category: {product.category?.name}</h6>
             <button class="btn btn-secondary ms-1">ADD TO CART</button>
         </div>
        </div>
