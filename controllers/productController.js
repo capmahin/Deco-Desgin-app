@@ -252,4 +252,14 @@ export const searchProductController =  async (req,res)=>{
             error,
         })
     }
+};
+
+//similar products
+
+export const relatedProductController = async (req,res) =>{
+    try {
+        
+    } catch (error) {
+        
+    }
 }
