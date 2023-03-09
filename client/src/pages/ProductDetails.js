@@ -32,8 +32,8 @@ const ProductDetails = () => {
             <h5>Name : {product.name}</h5>
             <h5>Description : {product.description}</h5>
             <h5>Price : {product.price}</h5>
-            <h5>Name : {product.name}</h5>
-            <h5>Name : {product.name}</h5>
+            <h5>Category : {product.category}</h5>
+            <h5>Shipping : {product.shipping}</h5>
         </div>
        </div>
        <div className="row">
