@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const ProductDetails = () => {
     const params = useParams();
     const [product, setProduct] = useState({});
-    const [relatedProducts, setRelatedProducts] = useState([])
+    const [relatedProducts, setRelatedProducts] = useState([]);
 
     //initalp details
     useEffect(()=>{
@@ -18,6 +18,15 @@ const ProductDetails = () => {
         try {
             const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`);
             setProduct(data?.product)
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    //get similar product
+    const getSmilarProduct = async(pid,cid)=>{
+        try {
+            const {data} = await axios.get(`/api/v1/product/related-product/${pid}/${cid}`)
         } catch (error) {
             console.log(error)
         }
