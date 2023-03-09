@@ -260,6 +260,11 @@ export const relatedProductController = async (req,res) =>{
     try {
         
     } catch (error) {
-        
+        console.log(error)
+        res.status(400).send({
+            success:false,
+            message:'Error while getting related product',
+            error
+        })
     }
 }
