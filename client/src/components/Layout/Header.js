@@ -5,6 +5,7 @@ import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import Dashboard from './../../pages/user/Dashboard';
 import SearchInput from "../Form/Searchinput";
+import useCategory from "../../hooks/useCategory";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
