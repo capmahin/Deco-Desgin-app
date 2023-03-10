@@ -13,4 +13,8 @@ export default function useCategory() {
             console.log(error)
         }
     }
+
+    useEffect(()=>{
+        
+    },[])
 }
