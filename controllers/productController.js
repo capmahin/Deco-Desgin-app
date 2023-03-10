@@ -276,3 +276,9 @@ export const relatedProductController = async (req,res) =>{
         });
     }
 };
+
+//get product by category
+
+export const productCategoryController = async(req,res)=>{
+    
+}
