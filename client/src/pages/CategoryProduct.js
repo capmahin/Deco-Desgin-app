@@ -27,8 +27,6 @@ const CategoryProduct = () => {
            <h4 className="text-center">{products?.length} result</h4>
            <div className="row">
            <div className="col-md-9 offset-1">
-       
-       <h1 className="text-center">All Products</h1>
        <div className="d-flex flex-wrap">
          {products?.map(p=>(      
             <div className="card m-2" style={{width: '18rem'}} >
