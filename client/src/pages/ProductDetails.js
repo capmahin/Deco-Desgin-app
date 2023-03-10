@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
     const params = useParams();
+    const navigate = useNavigate();
     const [product, setProduct] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -64,6 +65,8 @@ const ProductDetails = () => {
               <h5 className="card-title">{p.name}</h5>
               <p className="card-text">{p.description.substring(0, 60)}...</p>
               <p className="card-text">$ {p.price}</p>
+              <button class="btn btn-primary ms-1" 
+             onClick={()=> navigate(`/product/${p.slug}`) }>More Details</button>
               <button class="btn btn-secondary ms-1">ADD TO CART</button>
              </div>
             </div>
