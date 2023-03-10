@@ -16,5 +16,7 @@ export default function useCategory() {
 
     useEffect(()=>{
         getCategories();
-    },[])
+    },[]);
+
+    return categories;
 }
