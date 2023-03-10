@@ -280,5 +280,14 @@ export const relatedProductController = async (req,res) =>{
 //get product by category
 
 export const productCategoryController = async(req,res)=>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            success:false,
+            error,
+            message:'Error while getting products'
+        })
+    }
 }
