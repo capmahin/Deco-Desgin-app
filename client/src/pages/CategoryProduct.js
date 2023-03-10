@@ -1,11 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
-
+import { useParams } from "react-router-dom";
+import axios from "axios";
 const CategoryProduct = () => {
+    const  params = useParams();
     const [products, setProducts] = useState([]);
     const getProductsByCat = async () =>{
         try {
-            
+            const {data} = await axios.get(`/api/v1/product/product-category/${params.slug}`)
         } catch (error) {
             console.log(error)
         }
