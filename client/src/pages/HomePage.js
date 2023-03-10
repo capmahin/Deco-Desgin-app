@@ -144,7 +144,7 @@ const loadMore = async() =>{
          <button className="btn btn-danger" onClick={()=> window.location.reload()}>RESET FILTERS</button>
        </div>
         </div> 
-       <div className="col-md-9">
+       <div className="col-md-9 offset-1">
        
         <h1 className="text-center">All Products</h1>
         <div className="d-flex flex-wrap">
