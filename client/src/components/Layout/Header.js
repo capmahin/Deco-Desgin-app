@@ -32,16 +32,21 @@ const Header = () => {
           <NavLink to="/" className="nav-link"  >Home</NavLink>
         </li>
         <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" to={"/categories"} role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle" to={"/categories"}  data-bs-toggle="dropdown" >
              Categories
             </Link>
+            <ul className="dropdown-menu">
+            <li>
+            <Link className="dropdown-item" to={"/categories"} >All Categories</Link>
+            </li>
         {categories?.map((c)=>(
-         <ul className="dropdown-menu">
+         
+        
         <li><Link className="dropdown-item" to={`/category/${c.slug}`} >{c.name}</Link></li>
 
-         </ul>
+         
        ))}
- 
+       </ul>
         </li>
 
         
