@@ -6,6 +6,10 @@ export default function useCategory() {
 
     //get cat
     const getCategories = async () =>{
-        
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
