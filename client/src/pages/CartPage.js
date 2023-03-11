@@ -13,7 +13,10 @@ const CartPage = () => {
     try {
       let total = 0;
       cart?.map(item => {total = total + item.price});
-      return total;
+      return total.toLocaleString("en-US", {
+        style:"currency",
+        currency:"USD",
+      });
     } catch (error) {
       console.log(error)
     }
@@ -67,7 +70,7 @@ const CartPage = () => {
                <h2>Cart Summary</h2>
                <p>Total | Checkout | Payment</p>
                <hr />
-               <h4>Total :</h4>
+               <h4>Total : {totalPrice()}</h4>
               </div>
             </div>
         </div>
