@@ -15,7 +15,13 @@ const Profile = () => {
     const [password, setPassword] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("");
+    
+    //get user data
+    useEffect(()=>{
+        
+    },[])
 
+   //from function    
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try {
@@ -36,7 +42,7 @@ const Profile = () => {
                 </div>
                 <div className="col-md-9">
                 <div className="form-container">
-        <h4 className="title">REGISTER FORM</h4>
+        <h4 className="title">USER PROFILE</h4>
         <form onSubmit={handleSubmit}>
   <div className="mb-3">
     
