@@ -2,6 +2,9 @@ import React,{useState,useEffect} from 'react'
 import UserMenu from "../../components/Layout/UserMenu";
 import Layout from './../../components/Layout/Layout';
 import { useAuth } from "../../context/auth";
+import toast from 'react-hot-toast';
+import  axios  from 'axios';
+
 
 const Profile = () => {
     //context
@@ -11,7 +14,19 @@ const Profile = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [phone, setPhone] = useState("")
-    const [address, setAddress] = useState("")
+    const [address, setAddress] = useState("");
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        try {
+           const res = await axios.post("/api/v1/auth/register",{name,email,password,phone,address});
+           
+        } catch (error) {
+          console.log(error)
+          toast.error('Something went wrong')
+        }
+        
+      }
   return (
     <Layout title={'Your Profile'}>
         <div className="container-fluid m-3 p-3">
