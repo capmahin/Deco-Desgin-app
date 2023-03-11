@@ -15,6 +15,7 @@ const CartPage = () => {
         let index = myCart.findIndex(item => item._id === pid)
         myCart.splice(index, 1);
         setCart(myCart);
+        localStorage.setItem('cart', JSON.stringify(myCart));
       } catch (error) {
         console.log(error)
       }
@@ -28,7 +29,7 @@ const CartPage = () => {
                   {`Hellow ${auth?.token && auth?.user?.name}`}
                 </h1>
                 <h4 className="text-center">
-                  {cart?.length > 1 ? `You Have ${cart.length} items in your cart ${auth?.token ?
+                  {cart?.length  ? `You Have ${cart.length} items in your cart ${auth?.token ?
                   "" : "please login to checkout"}
                   ` : 'Your cart is empty'}
                 </h4>
@@ -52,8 +53,11 @@ const CartPage = () => {
                   ))
                 }
               </div>
-              <div className="col-md-4">
-                Checkout | Payment
+              <div className="col-md-4 text-center">
+               <h2>Cart Summary</h2>
+               <p>Total | Checkout | Payment</p>
+               <hr />
+               <h4>Total :</h4>
               </div>
             </div>
         </div>
