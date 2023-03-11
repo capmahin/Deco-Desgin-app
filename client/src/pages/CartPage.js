@@ -5,7 +5,9 @@ const CartPage = () => {
   return (
     <Layout>
         <div className="container">
-            
+            <div className="row">
+                <h1>Your cart</h1>
+            </div>
         </div>
     </Layout>
   )
