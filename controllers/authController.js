@@ -161,5 +161,14 @@ export const testController = (req,res)=>{
 //update Profile
 
 export const updateProfileController = async(req,res)=>{
-    
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        res.status(400).send({
+            success:false,
+            message:'Error while Update profile',
+            error,
+        })
+    }
 } 
