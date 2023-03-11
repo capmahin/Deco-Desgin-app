@@ -22,6 +22,14 @@ const CartPage = () => {
                 </h4>
               </div>
             </div>
+            <div className="row">
+              <div className="col-md-9">
+                Cart Item
+              </div>
+              <div className="col-md-3">
+                Checkout | Payment
+              </div>
+            </div>
         </div>
     </Layout>
   )
