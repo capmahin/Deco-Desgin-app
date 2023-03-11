@@ -11,7 +11,8 @@ const CartPage = () => {
   //total price
   const totalPrice = () =>{
     try {
-      
+      let total = 0;
+      cart?.map(item => {total = total + item.price})
     } catch (error) {
       console.log(error)
     }
