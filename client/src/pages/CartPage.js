@@ -31,7 +31,9 @@ const CartPage = () => {
                       <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} width="100px" height= {"100px"} />
                       </div>
                       <div className="col-md-8">
-                        details
+                        <h4>{p.name}</h4>
+                        <p>{p.description.substring(0,60)}</p>
+                        <h4>Price : {p.price}</h4>
                       </div>
                     </div>
                   ))
