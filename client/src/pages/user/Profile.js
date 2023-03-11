@@ -18,7 +18,7 @@ const Profile = () => {
     
     //get user data
     useEffect(()=>{
-        
+        const {email,name,phone,address,password} = auth.user
     },[])
 
    //from function    
