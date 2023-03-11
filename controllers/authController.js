@@ -163,6 +163,7 @@ export const testController = (req,res)=>{
 export const updateProfileController = async(req,res)=>{
     try {
         const {name,email,password,address,phone} = req.body
+        const user = await userModel.findById(req.user._id)
     } catch (error) {
         console.log(error)
         res.status(400).send({
