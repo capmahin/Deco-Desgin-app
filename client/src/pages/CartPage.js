@@ -28,7 +28,7 @@ const CartPage = () => {
                   cart?.map( p => (
                     <div className="row">
                       <div className="col-md-4">
-                         image
+                      <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} height="200" />
                       </div>
                       <div className="col-md-8">
                         details
