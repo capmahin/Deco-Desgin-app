@@ -29,7 +29,17 @@ const Profile = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try {
-           const res = await axios.post("/api/v1/auth/register",{name,email,password,phone,address});
+           const {data} = await axios.put("/api/v1/auth/profile",{name,email,password,phone,address});
+           if(data?.error){
+            toast.error(data?.error)
+           }else{
+            setAuth({...auth, user:data?.updatedUser});
+            let ls = localStorage.getItem("auth");
+            ls = JSON.parse(ls);
+            ls.user = data.updatedUser;
+            localStorage.setItem('auth', JSON.stringify(ls));
+            toast.success('Profile Updated Successfully');
+           }
            
         } catch (error) {
           console.log(error)
