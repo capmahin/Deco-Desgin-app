@@ -8,6 +8,14 @@ const CartPage = () => {
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
 
+  //total price
+  const totalPrice = () =>{
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
   //delete item
   const removeCartItem = (pid)=>{
       try {
