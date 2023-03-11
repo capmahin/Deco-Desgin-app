@@ -64,7 +64,7 @@ const Profile = () => {
     value={name}
     onChange={(e)=>setName(e.target.value)}
     className="form-control" id="exampleInputEmail1" placeholder="Enter Your Name" 
-    required/>
+    />
    
   </div>
   <div className="mb-3">
@@ -72,7 +72,7 @@ const Profile = () => {
     <input type="email"
     value={email}
     onChange={(e)=>setEmail(e.target.value)}
-    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Email"  required disabled/>
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Email"   disabled/>
    
   </div>
   <div className="mb-3">
@@ -80,14 +80,14 @@ const Profile = () => {
     <input type="password"
     value={password} 
     onChange={(e)=>setPassword(e.target.value)}
-    className="form-control" id="exampleInputPassword1" placeholder="Enter Your password" required />
+    className="form-control" id="exampleInputPassword1" placeholder="Enter Your password"  />
   </div>
   <div className="mb-3">
     
     <input type="text" 
     value={phone}
     onChange={(e)=>setPhone(e.target.value)}
-    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Phone Number" required />
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Phone Number"  />
    
   </div>
   <div className="mb-3">
@@ -95,7 +95,7 @@ const Profile = () => {
     <input type="text" 
     value={address}
     onChange={(e)=>setAddress(e.target.value)}
-    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Address" required />
+    className="form-control" id="exampleInputEmail1" placeholder="Enter Your Address"  />
    
   </div>
   
