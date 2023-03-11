@@ -156,4 +156,10 @@ export const testController = (req,res)=>{
     console.log(error);
     res.send({error});
    }
-}
+};
+
+//update Profile
+
+export const updateProfileController = async(req,res)=>{
+    
+} 
