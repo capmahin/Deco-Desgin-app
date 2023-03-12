@@ -306,4 +306,9 @@ export const productCategoryController = async(req,res)=>{
             message:'Error while getting products'
         })
     }
+};
+
+//payment gateway api
+export const braintreeTokenController = () =>{
+    
 }
