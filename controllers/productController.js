@@ -2,7 +2,7 @@ import productModel from "../models/productModel.js"
 import categoryModel from "../models/categoryModel.js"
 import fs from 'fs'
 import  slugify  from 'slugify';
-import braintree from "braintree";
+import braintree from 'braintree';
 
 //payment gateway
 var gateway = new braintree.BraintreeGateway({
@@ -310,5 +310,5 @@ export const productCategoryController = async(req,res)=>{
 
 //payment gateway api
 export const braintreeTokenController = () =>{
-    
+
 }
