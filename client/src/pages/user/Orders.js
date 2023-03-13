@@ -63,7 +63,7 @@ const Orders = () => {
                                                 <th>{o?.status}</th>
                                                 <th>{o?.buyer?.name}</th>
                                                 <th>{moment(o?.createAt).fromNow()}</th>
-                                                <th>{o?.payment.Success ? "Success" :"Failed"}</th>
+                                                <th>{o?.payment.success ? "Success" :"Failed"}</th>
                                                 <th>{o?.products?.length}</th>
                                             </tr>
                                         </tbody>
