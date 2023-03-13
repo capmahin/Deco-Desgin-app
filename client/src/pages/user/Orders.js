@@ -1,15 +1,16 @@
 import React,{useState,useEffect} from 'react'
 import Layout from './../../components/Layout/Layout';
 import UserMenu from './../../components/Layout/UserMenu';
+import axios from "axios";
 
 const Orders = () => {
     const [orders,setOders] = useState([]);
 
     const getOrders = async()=>{
         try {
-            
+            const {data} = await axios.get('/api/v1/auth/orders')
         } catch (error) {
-            console.log(error)
+            console.log(error) 
         }
     }
   return (
