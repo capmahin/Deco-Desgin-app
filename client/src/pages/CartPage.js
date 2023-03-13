@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Layout from './../components/Layout/Layout';
 import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
+import DropIn from "braintree-web-drop-in-react";
 const CartPage = () => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
+  const [clientToken, setClientToken] = useState("")
   const navigate = useNavigate();
+  
 
   //total price
   const totalPrice = () =>{
