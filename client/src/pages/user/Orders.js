@@ -4,6 +4,14 @@ import UserMenu from './../../components/Layout/UserMenu';
 
 const Orders = () => {
     const [orders,setOders] = useState([]);
+
+    const getOrders = async()=>{
+        try {
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
   return (
     <Layout title={'Your Orders'}>
         <div className="container-fluid p-3 m-3">
