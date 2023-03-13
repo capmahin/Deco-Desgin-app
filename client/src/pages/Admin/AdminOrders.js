@@ -5,6 +5,8 @@ import AdminMenu from './../../components/Layout/AdminMenu';
 import Layout from './../../components/Layout/Layout';
 
 const AdminOrders = () => {
+    const [status,setStatus] = useState(['Not Process','Processing','Shipped', 'deliverd', 'cancel']);
+    const [changeStatus, setChangeStatus] = useState("");
   return (
     <Layout title={'All Orders Data'}>
     <div className="row">
