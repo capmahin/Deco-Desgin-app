@@ -67,7 +67,7 @@ const CartPage = () => {
       setLoading(false)
       localStorage.removeItem('cart')
       setCart([])
-      navigate('/dashboard/user/order')
+      navigate('/dashboard/user/orders')
       toast.success('Payment Completed Successfully')
     } catch (error) {
       console.log(error)
@@ -137,7 +137,10 @@ const CartPage = () => {
                 </div>
                )}
                <div className="mt-2">
-                <DropIn
+                {
+                  !clientToken || !cart?.length ? (""):(
+                    <>
+                        <DropIn
                 options={{
                   authorization: clientToken,
                   paypal:{
@@ -151,6 +154,10 @@ const CartPage = () => {
                 onClick={handlePayment} disabled={ !loading || !instance || !auth?.user?.address}>{
                   loading ? 'Processing....' : 'Make Payment'
                 }</button>
+                    </>
+                  )
+                }
+                
                </div>
               </div>
             </div>
