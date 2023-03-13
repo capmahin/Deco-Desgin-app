@@ -4,11 +4,12 @@ import UserMenu from './../../components/Layout/UserMenu';
 import axios from "axios";
 
 const Orders = () => {
-    const [orders,setOders] = useState([]);
+    const [orders,setOrders] = useState([]);
 
     const getOrders = async()=>{
         try {
-            const {data} = await axios.get('/api/v1/auth/orders')
+            const {data} = await axios.get('/api/v1/auth/orders');
+            setOrders(data)
         } catch (error) {
             console.log(error) 
         }
