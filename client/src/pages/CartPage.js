@@ -71,6 +71,7 @@ const CartPage = () => {
       toast.success('Payment Completed Successfully')
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   }
 
@@ -147,7 +148,9 @@ const CartPage = () => {
                 />
                 <button className="btn btn-primary" 
                 
-                onClick={handlePayment} disabled={ !loading || !instance || !auth?.user?.address}>Make Payment</button>
+                onClick={handlePayment} disabled={ !loading || !instance || !auth?.user?.address}>{
+                  loading ? 'Processing....' : 'Make Payment'
+                }</button>
                </div>
               </div>
             </div>
