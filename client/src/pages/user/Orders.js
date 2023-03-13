@@ -2,10 +2,11 @@ import React,{useState,useEffect} from 'react'
 import Layout from './../../components/Layout/Layout';
 import UserMenu from './../../components/Layout/UserMenu';
 import axios from "axios";
+import { useAuth } from "../../context/auth";
 
 const Orders = () => {
     const [orders,setOrders] = useState([]);
-
+    const [auth,setAuth] = useAuth();
     const getOrders = async()=>{
         try {
             const {data} = await axios.get('/api/v1/auth/orders');
@@ -14,6 +15,10 @@ const Orders = () => {
             console.log(error) 
         }
     }
+
+    useEffect(()=>{
+        if(auth?.token) getOrders()
+    },[auth?.token])
   return (
     <Layout title={'Your Orders'}>
         <div className="container-fluid p-3 m-3">
