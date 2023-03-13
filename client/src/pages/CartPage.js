@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
@@ -35,6 +35,15 @@ const CartPage = () => {
       } catch (error) {
         console.log(error)
       }
+  };
+
+  //get payment gateway token
+  const getToken = async () =>{
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <Layout>
