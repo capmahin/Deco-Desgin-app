@@ -36,35 +36,35 @@ const Orders = () => {
                                      <table className="table">
                                         <thead>
                                             <tr>
-                                                <td scope="col">
+                                                <th scope="col">
                                                 #
-                                                </td>
-                                                <td scope="col">
+                                                </th>
+                                                <th scope="col">
                                                  Status
-                                                </td>
-                                                <td scope="col">
+                                                </th>
+                                                <th scope="col">
                                                  Buyer
-                                                </td>
-                                                <td scope="col">
+                                                </th>
+                                                <th scope="col">
                                                  date
-                                                </td>
-                                                <td scope="col">
+                                                </th>
+                                                <th scope="col">
                                                  Payment
-                                                </td>
-                                                <td scope="col">
+                                                </th>
+                                                <th scope="col">
                                                  Quantity
-                                                </td>
+                                                </th>
                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th>{i + 1}</th>
-                                                <th>{o?.status}</th>
-                                                <th>{o?.buyer?.name}</th>
-                                                <th>{moment(o?.createAt).fromNow()}</th>
-                                                <th>{o?.payment.success ? "Success" :"Failed"}</th>
-                                                <th>{o?.products?.length}</th>
+                                                <td>{i + 1}</td>
+                                                <td>{o?.status}</td>
+                                                <td>{o?.buyer?.name}</td>
+                                                <td>{moment(o?.createAt).fromNow()}</td>
+                                                <td>{o?.payment.success ? "Success" :"Failed"}</td>
+                                                <td>{o?.products?.length}</td>
                                             </tr>
                                         </tbody>
                                      </table>
