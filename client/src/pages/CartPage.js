@@ -52,7 +52,18 @@ const CartPage = () => {
   }
   useEffect(()=>{
     getToken()
-  },[auth?.token])
+  },[auth?.token]);
+
+  //handle payments
+
+  const handlePayment = async () =>{
+    try {
+      const {nonce} = await instance.requestPaymentMethod()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Layout>
         <div className="container">
@@ -114,6 +125,20 @@ const CartPage = () => {
                   }
                 </div>
                )}
+               <div className="mt-2">
+                <DropIn
+                options={{
+                  authorization: clientToken,
+                  paypal:{
+                    flow:"vault"
+                  }
+                }}
+                onInstance={instance => setInstance(instance)}
+                />
+                <button className="btn btn-primary" 
+                
+                onClick={handlePayment} disabled={ !loading || !instance || !auth?.user?.address}>Make Payment</button>
+               </div>
               </div>
             </div>
         </div>
