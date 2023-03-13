@@ -3,6 +3,7 @@ import Layout from './../../components/Layout/Layout';
 import UserMenu from './../../components/Layout/UserMenu';
 import axios from "axios";
 import { useAuth } from "../../context/auth";
+import moment from "moment";
 
 const Orders = () => {
     const [orders,setOrders] = useState([]);
@@ -45,7 +46,7 @@ const Orders = () => {
                                                  Buyer
                                                 </td>
                                                 <td scope="col">
-                                                 Orders
+                                                 date
                                                 </td>
                                                 <td scope="col">
                                                  Payment
@@ -56,6 +57,16 @@ const Orders = () => {
                                                
                                             </tr>
                                         </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>{i + 1}</th>
+                                                <th>{o?.status}</th>
+                                                <th>{o?.buyer?.name}</th>
+                                                <th>{moment(o?.createAt).fromNow()}</th>
+                                                <th>{o?.payment.Success ? "Success" :"Failed"}</th>
+                                                <th>{o?.products?.length}</th>
+                                            </tr>
+                                        </tbody>
                                      </table>
                                 </div>
                             )
