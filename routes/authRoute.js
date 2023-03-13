@@ -36,5 +36,8 @@ router.put('/profile', requireSignIn, updateProfileController);
 //orders
 router.get('/orders',requireSignIn, getOrdersController);
 
+//all orders
+router.get('/all-orders',requireSignIn, getAllOrdersController);
+
 
 export default router
