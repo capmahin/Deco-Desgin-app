@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Layout from './../components/Layout/Layout';
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom";
+import "../styles/ProductDetailsStyles.css";
 
 const ProductDetails = () => {
     const params = useParams();
@@ -36,7 +37,7 @@ const ProductDetails = () => {
     }
   return (
     <Layout title={'Product-details'}>
-       <div className="row container mt-2">
+       <div className="row container product-details">
         <div className="col-md-6">
         <img src={`/api/v1/product/product-photo/${product._id}`} className="card-img-top" alt={product.name} 
         height="300"
@@ -44,30 +45,46 @@ const ProductDetails = () => {
        
         />
         </div>
-        <div className="col-md-6 ">
+        <div className="col-md-6 product-details-info">
             <h1 className="text-center">Products Details</h1>
             <h5>Name : {product.name}</h5>
             <h5>Description : {product.description}</h5>
-            <h5>Price : {product.price}</h5>
+            <h6>
+            Price :
+            {product?.price?.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            })}
+          </h6>
             <h6>Category: {product.category?.name}</h6>
             <button class="btn btn-secondary ms-1">ADD TO CART</button>
         </div>
        </div>
        <hr />
-       <div className="row container">
-        <h5>Similar Product</h5>
+       <div className="row container similar-products">
+        <h5>Similar Products ➡️</h5>
         {relatedProducts.length <1 && <p className="text-center"> No Similar Products found </p>}
         <div className="d-flex flex-wrap">
           {relatedProducts?.map(p=>(      
-             <div className="card m-2" style={{width: '18rem'}} >
-              <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} height="200" />
+             <div className="card m-2" key={p._id} >
+              <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name}  />
               <div className="card-body">
-              <h5 className="card-title">{p.name}</h5>
+              <div className="card-name-price">
+                  <h5 className="card-title">{p.name}</h5>
+                  <h5 className="card-title card-price">
+                    {p.price.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </h5>
+                </div>
               <p className="card-text">{p.description.substring(0, 60)}...</p>
-              <p className="card-text">$ {p.price}</p>
-              <button class="btn btn-primary ms-1" 
+              
+             <div className="card-name-price">
+             <button class="btn btn-primary ms-1" 
              onClick={()=> navigate(`/product/${p.slug}`) }>More Details</button>
               <button class="btn btn-secondary ms-1">ADD TO CART</button>
+             </div>
              </div>
             </div>
                    

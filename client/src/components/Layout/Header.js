@@ -22,7 +22,7 @@ const Header = () => {
   }
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div className="container-fluid">
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
@@ -61,7 +61,7 @@ const Header = () => {
         </li>
           </>) : (<>
             <li className="nav-item dropdown">
-  <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style={{ border: "none" }}>
     {auth?.user?.name}
   </NavLink>
   <ul className="dropdown-menu">
@@ -79,9 +79,9 @@ const Header = () => {
           </>)
         }
         <li className="nav-item">
-           <Badge count={cart?.length} showZero>
-       <NavLink to="/cart" className="nav-link" >Cart</NavLink>
-      </Badge>
+           
+       <NavLink to="/cart" className="nav-link" ><Badge count={cart?.length} showZero offset={[10,-5]}>Cart</Badge></NavLink>
+      
         </li>
        
       </ul>
