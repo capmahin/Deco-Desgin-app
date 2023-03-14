@@ -222,4 +222,12 @@ export const getAllOrdersController = async (req,res) =>{
    }
 };
 
+//order status
+export const orderStatusController = async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
 
