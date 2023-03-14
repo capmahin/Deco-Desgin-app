@@ -225,9 +225,16 @@ export const getAllOrdersController = async (req,res) =>{
 //order status
 export const orderStatusController = async(req,res)=>{
     try {
-        
+        const {orderId} = req.params
+        const {status} = req.body
+
     } catch (error) {
         console.log(error)
+        res.status(500).send({
+            success:false,
+            error,
+            message:'Error while Updating Order'
+        })
     }
 }
 
