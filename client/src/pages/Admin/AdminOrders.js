@@ -6,13 +6,14 @@ import Layout from './../../components/Layout/Layout';
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import {Select} from 'antd';
+
 const {Option} = Select
 
 const AdminOrders = () => {
     const [status,setStatus] = useState(['Not Process','Processing','Shipped', 'deliverd', 'cancel']);
     const [changeStatus, setChangeStatus] = useState("");
     const [orders,setOrders] = useState([]);
-    const [auth,setAuth] = useAuth();
+    const [auth,setAuth] = useAuth(); 
     const getOrders = async()=>{
         try {
             const {data} = await axios.get('/api/v1/auth/all-orders');
@@ -24,7 +25,17 @@ const AdminOrders = () => {
 
     useEffect(()=>{
         if(auth?.token) getOrders()
-    },[auth?.token])
+    },[auth?.token]);
+
+    const handleChange = async(orderId,value)=>{
+        try {
+            const {data} = await axios.put(`/api/v1/auth/order-status/${orderId}`,{status:value});
+            getOrders();
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    
   return (
     <Layout title={'All Orders Data'}>
     <div className="row">
@@ -65,10 +76,10 @@ const AdminOrders = () => {
                                             <tr>
                                                 <td>{i + 1}</td>
                                                 <td>
-                                                    <Select bordered={false} onChange={(value)=> setChangeStatus(value) }
+                                                    <Select bordered={false} onChange={(value)=> handleChange(o._id,value) }
                                                     defaultValue={o?.status}>
                                                 {status.map((s,i)=>(
-                                                    <Option key={i} value={status}>{s}</Option>
+                                                    <Option key={i} value={s}>{s}</Option>
                                                 ))}
                                                     </Select>
                                                 </td>
